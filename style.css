@@ -1,0 +1,193 @@
+/* Grundlegendes & Body */
+body, html {
+  margin: 0;
+  height: 100%;
+  background-color: #0000AA;
+  color: #ffffff;
+  font-family: 'Perfect DOS VGA 437 Win','IBM Plex Mono', monospace;
+  cursor: none !important; /* Mauszeiger komplett ausblenden */
+  font-weight: normal;
+}
+
+/* Top Menu */
+.top-menu {
+  background-color: #00aaaa;
+  padding: 4px 8px;
+  display: flex;
+  gap: 20px;
+  cursor: none !important;
+}
+
+.top-menu a {
+  padding: 4px 6px;
+  background-color: #00aaaa;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  cursor: none !important;
+}
+
+.top-menu a:hover {
+  background-color: #ffff00; 
+  color: #000000;
+  cursor: none !important;
+}
+
+/* Container für Side Menu + Content */
+.container {
+  display: flex;
+  height: calc(100vh - 60px); /* 30px für top-menu + 30px für footer */
+}
+
+/* Side Menu */
+.side-content {
+  background-color: #0000AA;
+  width: 200px;
+  padding: 10px 5px 25px 5px;
+  box-sizing: border-box;
+  cursor: none !important;
+  overflow-y: auto;
+}
+
+.side-content a {
+  display: block;
+  padding: 4px;
+  margin: 8px 0 0 0;
+  background-color: #00aaaa;
+  color: #000000;
+  text-decoration: none;
+  cursor: none !important;
+}
+
+.side-content a:hover {
+  background-color: #ffff00;
+  color: #000000;
+  cursor: none !important;
+}
+
+/* Hauptbereich */
+.main-content {
+  flex-grow: 1;
+  padding: 10px 15px 30px 5px;
+  background-color: #0000AA;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Hamburger Button */
+#hamburger-btn {
+  display: none;
+  font-family: 'Perfect DOS VGA 437 Win','IBM Plex Mono', monospace;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: yellow;
+  margin: 33px 10px;
+  cursor: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+
+/* Responsive für kleine Bildschirme */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  #hamburger-btn {
+    display: block;
+  }
+  .side-content {
+    position: fixed;
+    box-sizing: border-box;
+    border: none;
+    width: calc(100% - 15px);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 1000;
+  }
+  .side-content.open {
+    max-height: 50%;
+    border: solid;
+    border-color: #00aaaa;
+    padding-left: 35px;
+  }
+  .main-content {
+    height: calc(100vh - 80px);
+    padding-top: 15px;
+  }
+}
+
+/* Überschriften */
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #ffff00;
+  font-weight: normal;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #ffff00;
+  font-weight: normal;
+}
+
+p {
+  margin-top: 0;
+}
+
+/* Footer */
+.footer-menu {
+  background-color: #00aaaa;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  color: #ffffff;
+  z-index: 100;
+  font-family: 'Perfect DOS VGA 437 Win','IBM Plex Mono', monospace;
+}
+
+.footer-menu div {
+  padding: 4px 6px;
+}
+
+/* Custom DOS Cursor */
+.custom-dos-cursor {
+  position: fixed;
+  font-family: 'Perfect DOS VGA 437', monospace;
+  font-size: 16px;
+  color: #ffffff;
+  pointer-events: none;
+  z-index: 9999;
+  user-select: none;
+  line-height: 1;
+}
+
+/* Cursor bleibt überall ausgeblendet auch auf Links */
+a, a:hover {
+  cursor: none !important;
+}
+
+.status {
+  animation: blink-green-bg 3s steps(1, start) infinite;
+  padding: 0px 0px 0px 1px;
+  font-weight: normal;
+}
+
+@keyframes blink-green-bg {
+  0%, 100% {
+    background-color: transparent;
+    color: #ffffff;
+  }
+  50% {
+    background-color: #00FF00;
+  }
+}

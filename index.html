@@ -1,118 +1,126 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>DOS Style Webseite</title>
-  <link href="https://fonts.cdnfonts.com/css/perfect-dos-vga-437" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/ibm-plex-mono" rel="stylesheet">
-                
-  <style>
-    body {
-      margin: 0;
-      background-color: #000080;
-      color: #ffffff;
-      font-family: 'Perfect DOS VGA 437 Win','IBM Plex Mono', monospace;
-    }ddd
-d
-    .top-menu {d
-      background-color: #00aaaa;
-      padding: 4px 8px;
-      display: flex;
-      gap: 20px;
-      font-weight: bold;
-    }
-
-    .top-menu a {
-      padding: 4px 6px;
-      background-color: #00aaaa;
-      color: #000000;
-      text-decoration: none;
-    }
-
-    .top-menu a:hover {
-      background-color: #ffff55;
-      color: #000000;
-      cursor: pointer;
-    }
-
-    .container {
-      display: flex;
-      height: calc(100vh - 30px);
-    }
-
-    .side-menu {
-      background-color: #0000aa;
-      width: 200px;
-      padding: 10px;
-    }
-
-    .side-menu div {
-      margin: 8px 0;
-      padding: 4px;
-      background-color: #00aaaa;
-      color: #000000;
-    }
-
-    .side-menu div:hover {
-      background-color: #ffff55;
-      color: #000000;
-      cursor: pointer;
-    }
-
-    .main {
-      flex-grow: 1;
-      padding: 10px;
-      background-color: #000080;
-    }
-
-    .window {
-      padding: 10px;
-      background-color: #0000aa;
-    }
-
-    .dos-font-alt {
-      font-family: 'Perfect DOS VGA 437', monospace;
-      white-space: pre-wrap;
-      display: block;
-      margin-top: 10px;
-    }
-  </style>
+  <link href="https://fonts.cdnfonts.com/css/perfect-dos-vga-437" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/ibm-plex-mono" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <div class="top-menu">
-    <a href="datei.html">Datei</a>
-    <a href="bearbeiten.html">Bearbeiten</a>
-    <a href="ansicht.html">Ansicht</a>
-    <a href="extras.html">Extras</a>
-    <a href="hilfe.html">Hilfe</a>
+    <a href="#" data-section="datei">Datei</a>
+    <a href="#" data-section="bearbeiten">Bearbeiten</a>
+    <a href="#" data-section="ansicht">Ansicht</a>
+    <a href="#" data-section="extras">Extras</a>
+    <a href="#" data-section="hilfe">Hilfe</a>
   </div>
+
+  <button id="hamburger-btn" aria-label="Menü öffnen" aria-expanded="false">&#xbb;</button>
 
   <div class="container">
-    <div class="side-menu">
-      <div>Fenstermenü</div>
-      <div>Auswahlliste</div>
-      <div>Export</div>
-      <div>Kompaktanalyse</div>
-      <div>Einrichtung</div>
-      <div>Datei Index</div>
-      <div>Beenden</div>
-    </div>
-
-    <div class="main">
-      <div class="window">
-        <h3>Systemübersicht</h3>
-        <p>CPU: Pentium Pro, V86 Mode</p>
-        <p>RAM: 64 MB</p>
-        <p>Grafik: Matrox Millenium II</p>
-        <p>CD-ROM: 52x</p>
-        <p>Sound: 2 Tasten seriell</p>
-        <span class="dos-font-alt">
-±±±±±±±±
-°°°°°°
-±±±±±±±±
-        </span>
-      </div>
-    </div>
+    <nav class="side-content" id="side-menu"></nav>
+    <main class="main-content" id="main-content"></main>
   </div>
+
+  <div class="footer-menu">
+    <div>Status: <span class="status">OK</span></div>
+    <div>Benutzer: DOSUser</div>
+    <div>Zeit: <span id="clock"></span></div>
+  </div>
+
+  <div class="custom-dos-cursor">±</div>
+
+<script>
+  // Cursor Positionierung
+  const cursor = document.querySelector('.custom-dos-cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = (e.pageX + 1) + 'px';
+    cursor.style.top = (e.pageY + 2) + 'px';
+  });
+
+  // Cursor-Farbe bei Hover über Links
+  document.body.addEventListener('mouseover', e => {
+    if (e.target.tagName === 'A') {
+      cursor.style.color = '#000000';  // Schwarz beim Hover
+    }
+  });
+  document.body.addEventListener('mouseout', e => {
+    if (e.target.tagName === 'A') {
+      cursor.style.color = '#ffffff';  // Weiß normal
+    }
+  });
+
+  // Uhr
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    document.getElementById('clock').textContent = time;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Lade Side-Menu und Content per Fetch
+  async function loadSection(name) {
+    try {
+      // Lade Menü HTML
+      const menuResp = await fetch(`top-menu/${name}/menu.html`);
+      if (!menuResp.ok) throw new Error('Menü nicht gefunden');
+      const menuHTML = await menuResp.text();
+
+      // Lade Content HTML
+      const contentResp = await fetch(`top-menu/${name}/content.html`);
+      if (!contentResp.ok) throw new Error('Content nicht gefunden');
+      const contentHTML = await contentResp.text();
+
+      // Setze Inhalte
+      document.getElementById('side-menu').innerHTML = menuHTML;
+      document.getElementById('main-content').innerHTML = contentHTML;
+
+      // Maus-Cursor neu binden (wegen neuem Inhalt)
+      bindCustomCursor();
+
+    } catch (e) {
+      console.error(e);
+      document.getElementById('side-menu').textContent = 'Fehler beim Laden des Menüs';
+      document.getElementById('main-content').textContent = 'Fehler beim Laden des Inhalts';
+    }
+  }
+
+  // Menü-Links anklickbar machen (laden neuer Sektionen)
+  document.querySelectorAll('.top-menu a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const section = link.dataset.section;
+      loadSection(section);
+    });
+  });
+
+  // Hamburger-Button
+  const hamburger = document.getElementById('hamburger-btn');
+  const sideMenu = document.getElementById('side-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = sideMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Cursor-Funktion für dynamisch geladenen Inhalt (Side + Content)
+  function bindCustomCursor() {
+    // Cursor auf Links in Side und Main-Content
+    document.querySelectorAll('#side-menu a, #main-content a').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        cursor.style.color = '#000000';
+      });
+      link.addEventListener('mouseleave', () => {
+        cursor.style.color = '#ffffff';
+      });
+    });
+  }
+
+  // Start mit "datei"
+  loadSection('datei');
+</script>
+
 </body>
 </html>
