@@ -16,13 +16,11 @@ margin-top: 2em;
 </head>
 <body>
 <div id="bootscreen-text"></div>
-<div id="ladebalken">[                    ]</div>
+<div id="ladebalken"></div>
 
 <script>
 const lines = [
-"American Megatrends Inc.",
-"AMIBIOS (C)1994 American Megatrends Inc.",
-"Memory Test: ",
+"8086-BIOS",
 ];
 
 let idx = 0;
@@ -43,25 +41,12 @@ function startMemoryCount() {
 // Hochzählen 1K bis 640K Base Memory
 let baseMem = 1;
 let extMem = 1;
-bootscreenText.textContent += "Base Memory: 1K\n";
+bootscreenText.textContent += "Memory: 1KB OK\n";
 let baseInterval = setInterval(() => {
 baseMem++;
-bootscreenText.textContent = bootscreenText.textContent.replace(/Base Memory: \d+K/, "Base Memory: "+baseMem+"K");
+bootscreenText.textContent = bootscreenText.textContent.replace(/Base Memory: \d+K/, "Memory: "+baseMem+"KB OK");
 if (baseMem >= 640) {
 clearInterval(baseInterval);
-bootscreenText.textContent += "Extended Memory: 1K\n";
-extMemoryCount();
-}
-}, 5);
-}
-
-function extMemoryCount() {
-let extMem = 1;
-let extInterval = setInterval(() => {
-extMem++;
-bootscreenText.textContent = bootscreenText.textContent.replace(/Extended Memory: \d+K/, "Extended Memory: "+extMem+"K");
-if (extMem >= 384) {
-clearInterval(extInterval);
 startLoadingBar();
 }
 }, 5);
