@@ -124,14 +124,14 @@ body, html {
 h2 {
   margin-top: 0;
   margin-bottom: 0;
-  color: #ffff00;
+  color: magenta;
   font-weight: normal;
 }
 
 h3 {
   margin-top: 0;
   margin-bottom: 5px;
-  color: #ffff00;
+  color: #FFFF55;
   font-weight: normal;
 }
 
@@ -188,6 +188,6 @@ a, a:hover {
     color: #ffffff;
   }
   50% {
-    background-color: #00FF00;
+    background-color: #55FF55;
   }
 }
