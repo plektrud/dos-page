@@ -3,16 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>DOS Bootscreen</title>
-  <style>
-    html, body {
-      margin: 0; height: 100%; background: black; color: #0f0;
-      font-family: 'Perfect DOS VGA 437 Win', monospace;
-      white-space: pre; font-size: 16px;
-    }
-    #ladebalken {
-      margin-top: 2em;
-    }
-  </style>
+  <link href="https://fonts.cdnfonts.com/css/perfect-dos-vga-437" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/ibm-plex-mono" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="bootscreen-text"></div>
@@ -22,9 +15,7 @@
     const lines = [
       "American Megatrends Inc.",
       "AMIBIOS (C)1994 American Megatrends Inc.",
-      "Memory Test: ",
-      "Keyboard detected",
-      "Press DEL to enter Setup"
+      "Keyboard detected"   
     ];
 
     let idx = 0;
@@ -68,7 +59,15 @@
         }
       }, 5);
     }
-
+    const lines = [
+      "Keyboard detected",
+      "Primary Master: ST-12345  20.0 GB",
+    "Primary Slave: None",
+    "Secondary Master: None",
+    "Secondary Slave: None",
+   "Starting OS"
+    ];
+    
     function startLoadingBar() {
       let count = 0;
       const max = 20;
