@@ -9,12 +9,8 @@ margin-left: 20px; height: 100%; background: black; color: #5f5;
 font-family: 'Perfect DOS VGA 437 Win', monospace;
 white-space: pre; font-size: 16px;
 }
-#ladebalken {
-margin-top: 2em;
-}
- #os-info {
+#os-info {
   display: none;
-  margin-bottom: 0.8em;
 } 
 </style>
 <link href="https://fonts.cdnfonts.com/css/perfect-dos-vga-437" rel="stylesheet" />
@@ -53,12 +49,13 @@ function startMemoryCount() {
 let baseMem = 1;
 bootscreenText.textContent += "Memory: 1KB OK\n";
 let baseInterval = setInterval(() => {
-baseMem++;
-bootscreenText.textContent = bootscreenText.textContent.replace(/Memory: \d+KB OK/, "Memory: "+baseMem+"KB OK");
-if (baseMem >= 640) {
-clearInterval(baseInterval);
-showExtraLines(); // <-- HIER: Zusatzzeilen
-}
+    baseMem += 10; // Schritte zu 10 KB
+    if (baseMem > 640) baseMem = 640;
+    bootscreenText.textContent = bootscreenText.textContent.replace(/Memory: \d+KB OK/, "Memory: " + baseMem + "KB OK");
+    if (baseMem >= 640) {
+        clearInterval(baseInterval);
+        showExtraLines();
+    }
 }, 1);
 }
 
@@ -67,7 +64,8 @@ const extraLines = [
  "CMOS system options not set",
  "CMOS checksum failure",
  "FDD controller failure",
- " "
+ " ",
+ "C:\>"
 ]; 
  
 function showExtraLines() {
@@ -87,7 +85,7 @@ function showExtraLines() {
 function startLoadingBar() {
     // Zeige den OS-Info-Text an
   osInfo.style.display = "block";
-  osInfo.textContent = "OS wird gestartet";
+  osInfo.textContent = "OS booting";
 let count = 0;
 const max = 20;
 const interval = setInterval(() => {
