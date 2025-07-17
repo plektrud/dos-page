@@ -30,11 +30,7 @@ margin-top: 2em;
 const lines = [
 "8086-BIOS",
  "(C) Heckmann 1986",
- "Keyboard error",
- "CMOS systemn options not set",
- "CMOS checksum failure",
- "FDD controller failure",
- "8086-BIOS",
+  " "
 ];
 
 let idx = 0;
@@ -61,11 +57,32 @@ baseMem++;
 bootscreenText.textContent = bootscreenText.textContent.replace(/Memory: \d+KB OK/, "Memory: "+baseMem+"KB OK");
 if (baseMem >= 640) {
 clearInterval(baseInterval);
-startLoadingBar();
+showExtraLines(); // <-- HIER: Zusatzzeilen
 }
 }, 5);
 }
 
+const extraLines = [
+ "Keyboard error",
+ "CMOS systemn options not set",
+ "CMOS checksum failure",
+ "FDD controller failure"
+]; 
+ 
+function showExtraLines() {
+    let lineIdx = 0;
+    function nextLine() {
+        if (lineIdx < extraLines.length) {
+            bootscreenText.textContent += extraLines[lineIdx] + "\n";
+            lineIdx++;
+            setTimeout(nextLine, 700);
+        } else {
+            startLoadingBar(); // Ladebalken erst danach starten!
+        }
+    }
+    nextLine();
+}
+ 
 function startLoadingBar() {
     // Zeige den OS-Info-Text an
   osInfo.style.display = "block";
