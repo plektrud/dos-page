@@ -19,6 +19,9 @@ margin-top: 2em;
 </head>
 <body>
 <div id="bootscreen-text"></div>
+<p id="os-info">OS wird gestartet</p>
+<div id="ladebalken"></div>
+
 <div id="ladebalken"></div>
 
 <script>
@@ -55,6 +58,9 @@ startLoadingBar();
 }
 
 function startLoadingBar() {
+    // Zeige den OS-Info-Text an
+  osInfo.style.display = "block";
+  osInfo.textContent = "OS wird gestartet";
 let count = 0;
 const max = 20;
 const interval = setInterval(() => {
