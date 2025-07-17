@@ -1,89 +1,89 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <title>DOS Bootscreen</title>
-  <link href="https://fonts.cdnfonts.com/css/perfect-dos-vga-437" rel="stylesheet" />
-  <link href="https://fonts.cdnfonts.com/css/ibm-plex-mono" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<title>DOS Bootscreen</title>
+<style>
+html, body {
+margin: 0; height: 100%; background: black; color: #0f0;
+font-family: 'Perfect DOS VGA 437 Win', monospace;
+white-space: pre; font-size: 16px;
+}
+#ladebalken {
+margin-top: 2em;
+}
+</style>
 </head>
 <body>
-  <div id="bootscreen-text"></div>
-  <div id="ladebalken">[                    ]</div>
+<div id="bootscreen-text"></div>
+<div id="ladebalken">[                    ]</div>
 
-  <script>
-    const lines = [
-      "American Megatrends Inc.",
-      "AMIBIOS (C)1994 American Megatrends Inc.",
-      "Keyboard detected"   
-    ];
+<script>
+const lines = [
+"American Megatrends Inc.",
+"AMIBIOS (C)1994 American Megatrends Inc.",
+"Memory Test: ",
+];
 
-    let idx = 0;
-    const bootscreenText = document.getElementById('bootscreen-text');
-    const ladebalken = document.getElementById('ladebalken');
+let idx = 0;
+const bootscreenText = document.getElementById('bootscreen-text');
+const ladebalken = document.getElementById('ladebalken');
 
-    function showNextLine() {
-      if (idx < lines.length) {
-        bootscreenText.textContent += lines[idx] + "\n";
-        idx++;
-        setTimeout(showNextLine, 500 + Math.random()*700); // unregelmäßige Abstände
-      } else {
-        startMemoryCount();
-      }
-    }
+function showNextLine() {
+if (idx < lines.length) {
+bootscreenText.textContent += lines[idx] + "\n";
+idx++;
+setTimeout(showNextLine, 500 + Math.random()*700); // unregelmäßige Abstände
+} else {
+startMemoryCount();
+}
+}
 
-    function startMemoryCount() {
-      // Hochzählen 1K bis 640K Base Memory
-      let baseMem = 1;
-      let extMem = 1;
-      bootscreenText.textContent += "Base Memory: 1K\n";
-      let baseInterval = setInterval(() => {
-        baseMem++;
-        bootscreenText.textContent = bootscreenText.textContent.replace(/Base Memory: \d+K/, "Base Memory: "+baseMem+"K");
-        if (baseMem >= 640) {
-          clearInterval(baseInterval);
-          bootscreenText.textContent += "Extended Memory: 1K\n";
-          extMemoryCount();
-        }
-      }, 5);
-    }
+function startMemoryCount() {
+// Hochzählen 1K bis 640K Base Memory
+let baseMem = 1;
+let extMem = 1;
+bootscreenText.textContent += "Base Memory: 1K\n";
+let baseInterval = setInterval(() => {
+baseMem++;
+bootscreenText.textContent = bootscreenText.textContent.replace(/Base Memory: \d+K/, "Base Memory: "+baseMem+"K");
+if (baseMem >= 640) {
+clearInterval(baseInterval);
+bootscreenText.textContent += "Extended Memory: 1K\n";
+extMemoryCount();
+}
+}, 5);
+}
 
-    function extMemoryCount() {
-      let extMem = 1;
-      let extInterval = setInterval(() => {
-        extMem++;
-        bootscreenText.textContent = bootscreenText.textContent.replace(/Extended Memory: \d+K/, "Extended Memory: "+extMem+"K");
-        if (extMem >= 384) {
-          clearInterval(extInterval);
-          startLoadingBar();
-        }
-      }, 5);
-    }
-    const lines = [
-      "Keyboard detected",
-      "Primary Master: ST-12345  20.0 GB",
-    "Primary Slave: None",
-    "Secondary Master: None",
-    "Secondary Slave: None",
-   "Starting OS"
-    ];
-    
-    function startLoadingBar() {
-      let count = 0;
-      const max = 20;
-      const interval = setInterval(() => {
-        const blocks = '▒'.repeat(count) + ' '.repeat(max - count);
-        ladebalken.textContent = '[' + blocks + ']';
-        count++;
-        if (count > max) {
-          clearInterval(interval);
-          // Nach Bootscreen: Weiterleitung auf Index
+function extMemoryCount() {
+let extMem = 1;
+let extInterval = setInterval(() => {
+extMem++;
+bootscreenText.textContent = bootscreenText.textContent.replace(/Extended Memory: \d+K/, "Extended Memory: "+extMem+"K");
+if (extMem >= 384) {
+clearInterval(extInterval);
+startLoadingBar();
+}
+}, 5);
+}
+
+function startLoadingBar() {
+let count = 0;
+const max = 20;
+const interval = setInterval(() => {
+const blocks = '▒'.repeat(count) + ' '.repeat(max - count);
+ladebalken.textContent = '[' + blocks + ']';
+count++;
+if (count > max) {
+clearInterval(interval);
+// Nach Bootscreen: Weiterleitung auf Index
+          window.location.href = "index.html";
           window.location.href = "os.html";
-        }
-      }, 150);
-    }
+}
+}, 150);
+}
 
-    showNextLine();
-  </script>
+showNextLine();
+</script>
 </body>
 </html>
