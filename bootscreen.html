@@ -12,6 +12,14 @@ white-space: pre; font-size: 16px;
 #os-info {
   display: none;
 } 
+  .cursor {
+  display: inline-block;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
 </style>
 <link href="https://fonts.cdnfonts.com/css/perfect-dos-vga-437" rel="stylesheet" />
   <link href="https://fonts.cdnfonts.com/css/ibm-plex-mono" rel="stylesheet" />
@@ -20,6 +28,7 @@ white-space: pre; font-size: 16px;
 <body>
 <div id="bootscreen-text"></div>
 <div id="os-info"></div>
+<div id="prompt-line"></div>
 <div id="ladebalken"></div>
   
 <script>
@@ -65,7 +74,6 @@ const extraLines = [
  "CMOS checksum failure",
  "FDD controller failure",
  " ",
- "C:\>"
 ]; 
  
 function showExtraLines() {
@@ -76,12 +84,31 @@ function showExtraLines() {
             lineIdx++;
             setTimeout(nextLine, 700);
         } else {
-            startLoadingBar(); // Ladebalken erst danach starten!
+            showPromptAndBlinkCursor(); // Eingabe starten
         }
     }
     nextLine();
 }
- 
+  
+ function showPromptAndBlinkCursor() {
+    const promptLine = document.getElementById('prompt-line');
+    let visible = true;
+    let count = 0;
+    promptLine.innerHTML = 'C:\\>&nbsp;<span id="blink-cursor">_</span>';
+
+    const cursor = document.getElementById('blink-cursor');
+    const blinkInterval = setInterval(() => {
+        cursor.style.visibility = visible ? 'visible' : 'hidden';
+        visible = !visible;
+        if (!visible) count++; // Nur bei jedem "Ausblenden" hochzählen
+        if (count >= 3) {
+            clearInterval(blinkInterval);
+            promptLine.innerHTML = 'C:\\>&nbsp;'; // Cursor entfernen oder stehen lassen
+            startLoadingBar(); // Ladebalken starten
+        }
+    }, 400); // Geschwindigkeit anpassen
+}
+  
 function startLoadingBar() {
     // Zeige den OS-Info-Text an
   osInfo.style.display = "block";
