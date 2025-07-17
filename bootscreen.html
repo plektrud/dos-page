@@ -5,7 +5,7 @@
 <title>DOS Bootscreen</title>
 <style>
 html, body {
-margin: 0; height: 100%; background: black; color: #0f0;
+margin-left: 20px; height: 100%; background: black; color: #5f5;
 font-family: 'Perfect DOS VGA 437 Win', monospace;
 white-space: pre; font-size: 16px;
 }
@@ -40,11 +40,10 @@ startMemoryCount();
 function startMemoryCount() {
 // Hochzählen 1K bis 640K Base Memory
 let baseMem = 1;
-let extMem = 1;
 bootscreenText.textContent += "Memory: 1KB OK\n";
 let baseInterval = setInterval(() => {
 baseMem++;
-bootscreenText.textContent = bootscreenText.textContent.replace(/Base Memory: \d+K/, "Memory: "+baseMem+"KB OK");
+bootscreenText.textContent = bootscreenText.textContent.replace(/Memory: \d+KB OK/, "Memory: "+baseMem+"KB OK");
 if (baseMem >= 640) {
 clearInterval(baseInterval);
 startLoadingBar();
