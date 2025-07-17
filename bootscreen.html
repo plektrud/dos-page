@@ -23,7 +23,7 @@ margin-top: 2em;
 </head>
 <body>
 <div id="bootscreen-text"></div>
-<p id="os-info">OS wird gestartet</p>
+<div id="os-info"></div>
 <div id="ladebalken"></div>
   
 <script>
@@ -59,14 +59,15 @@ if (baseMem >= 640) {
 clearInterval(baseInterval);
 showExtraLines(); // <-- HIER: Zusatzzeilen
 }
-}, 5);
+}, 1);
 }
 
 const extraLines = [
  "Keyboard error",
- "CMOS systemn options not set",
+ "CMOS system options not set",
  "CMOS checksum failure",
- "FDD controller failure"
+ "FDD controller failure",
+ " "
 ]; 
  
 function showExtraLines() {
