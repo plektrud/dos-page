@@ -194,4 +194,19 @@ a, a:hover {
   50% {
     background-color: #55FF55;
   }
+      #bootscreen {
+      background-color: black;
+      color: #00FF00;
+      height: 100vh;
+      width: 100vw;
+      padding: 20px;
+      font-size: 16px;
+      font-family: 'Perfect DOS VGA 437 Win', monospace;
+      white-space: pre;
+    }
+
+    #ladebalken {
+      margin-top: 2em;
+      color: #00FF00;
+    }
 }
