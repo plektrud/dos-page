@@ -42,7 +42,8 @@ body, html {
 /* Side Menu */
 .side-content {
   background-color: #0000AA;
-  border: 2px solid 00ffff;
+  border: 2px solid #00ffff;
+  margin: 10px 5px 25px 10px;
   width: 200px;
   padding: 10px 5px 25px 5px;
   box-sizing: border-box;
@@ -69,7 +70,8 @@ body, html {
 /* Hauptbereich */
 .main-content {
   flex-grow: 1;
-  border: 2px solid 00ffff;
+  border: 2px solid #00ffff;
+  margin: 10px 5px 25px 10px;
   padding: 10px 15px 30px 5px;
   background-color: #0000AA;
   box-sizing: border-box;
