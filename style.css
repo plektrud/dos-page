@@ -2,7 +2,14 @@
 body, html {
   font-family: 'Perfect DOS VGA 437 Win', monospace;
 }
-.os body, .os html {
+body.index iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+          background: #000;
+      }
+
+body.os, html.os {
   margin: 0;
   height: 100%;
   background-color: #0000AA;
@@ -10,6 +17,13 @@ body, html {
   cursor: none !important; /* Mauszeiger komplett ausblenden */
   font-weight: normal;
 }
+
+body.bootscreen {
+margin-left: 20px; height: 100%; background: black; color: #5f5;
+font-family: 'Perfect DOS VGA 437 Win', monospace;
+white-space: pre; font-size: 16px;
+}
+
 
 /* Top Menu */
 .top-menu {
@@ -207,12 +221,7 @@ a, a:hover {
         background: #111;
     }
 
-  .index iframe {
-          width: 100%;
-          height: 100%;
-          border: none;
-          background: #000;
-      }
+
 #os-info {
   display: none;
 } 
@@ -225,10 +234,6 @@ a, a:hover {
   51%, 100% { opacity: 0; }
 }
 
-.bootscreen body {
-margin-left: 20px; height: 100%; background: black; color: #5f5;
-font-family: 'Perfect DOS VGA 437 Win', monospace;
-white-space: pre; font-size: 16px;
-}
+
 
 }
