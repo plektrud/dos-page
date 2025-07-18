@@ -22,12 +22,14 @@ body.bootscreen {
 margin-left: 20px; height: 100%; background: black; color: #5f5;
 font-family: 'Perfect DOS VGA 437 Win', monospace;
 white-space: pre; font-size: 16px;
+cursor: none !important; /* Mauszeiger komplett ausblenden */
 }
 
 body.terminal {
 margin-left: 20px; height: 100%; background: black; color: #5f5;
 font-family: 'Perfect DOS VGA 437 Win', monospace;
 white-space: pre; font-size: 16px;
+cursor: none !important; /* Mauszeiger komplett ausblenden */
 }
 
 
