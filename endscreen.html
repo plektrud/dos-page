@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>Terminal</title>
+<link href="https://fonts.cdnfonts.com/css/perfect-dos-vga-437" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="terminal">
+<div id="prompt-line"></div>
+<script>
+ function showPromptAndBlinkCursor() {
+    const promptLine = document.getElementById('prompt-line');
+    promptLine.innerHTML = 'C:\\>&nbsp;<span id="blink-cursor">_</span>';
+}
+   showPromptAndBlinkCursor();
+</script>
+</body>
+</html>
