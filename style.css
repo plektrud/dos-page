@@ -2,7 +2,7 @@
 body, html {
   font-family: 'Perfect DOS VGA 437 Win', monospace;
 }
-.os body, html {
+.os body, .os html {
   margin: 0;
   height: 100%;
   background-color: #0000AA;
