@@ -2,6 +2,9 @@
 body, html {
   font-family: 'Perfect DOS VGA 437 Win', monospace;
 }
+body.index  {
+          background: #000;
+      }
 body.index iframe {
           width: 100%;
           height: 100%;
@@ -220,13 +223,11 @@ a, a:hover {
   }
 }
     .window-frame {
-        width: 640px;
-        height: 480px;
+        width: 1024px;
+        height: 768px;
         border: 4px solid #333;
-        border-radius: 8px;
         overflow: hidden;
         margin: 50px auto;
-        background: #111;
     }
 
 
