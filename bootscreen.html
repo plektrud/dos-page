@@ -46,15 +46,19 @@ let baseInterval = setInterval(() => {
         clearInterval(baseInterval);
         showExtraLines();
     }
-}, 1);
+}, 5);
 }
 
 const extraLines = [
- "Keyboard error",
- "CMOS system options not set",
- "CMOS checksum failure",
- "FDD controller failure",
- " ",
+ "Video Adapter: unkown",
+  "Keyboard: OK",
+  "Mouse: OK",
+  "FDD Controller: Unable to locate disk drives",
+  "Error: No Bootdisk found",
+  " ";
+  " ";
+  "*** Fallback: Loading from the mysterious cloud... ***";
+  " "
 ]; 
  
 function showExtraLines() {
