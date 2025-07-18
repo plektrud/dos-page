@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Dropdown Menü mit Links</title>
+    <link href="https://fonts.cdnfonts.com/css/perfect-dos-vga-437" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Perfect DOS VGA 437', monospace;
+            background-color: black;
+            color: green;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            padding: 20px;
+            z-index: 1;
+        }
+
+        /* Styling für den "Link", der das Dropdown-Menü öffnet */
+        .dropdown-link {
+            color: #00FF00;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* Das Dropdown-Menü als Overlay, zu Beginn ausgeblendet */
+        .dropdown-menu {
+            display: none;
+            white-space: pre-wrap; /* Damit ASCII-Zeichen korrekt angezeigt werden */
+            position: absolute;
+            top: 50px;  /* Position oberhalb des "Links" */
+            left: 20px;
+            background-color: black;
+            border: 1px solid #00FF00;
+            padding: 5px;
+            width: 200px;
+            z-index: 1000; /* Um sicherzustellen, dass das Menü über dem restlichen Inhalt liegt */
+        }
+
+        /* Das ASCII-Menü Design */
+        .menu-item {
+            padding: 5px;
+            color: #00FF00;
+            text-decoration: none;  /* Entfernt Unterstreichung */
+        }
+
+        .menu-item:hover {
+            background-color: #003300;
+        }
+
+        /* Einfaches Text-Overlay */
+        .text-content {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="dropdown-link" onclick="toggleDropdown()">Klicke hier für das Menü</div>
+
+        <!-- Über dem restlichen Text liegendes Menü -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            ┌──────────────────────────┐
+            │  Auswahl Optionen        │
+            ├──────────────────────────┤
+            │  <a href="https://example.com/1" class="menu-item">1. Systemstatus anzeigen</a>│
+            │  <a href="https://example.com/2" class="menu-item">2. Neustart des Systems</a> │
+            │  <a href="https://example.com/3" class="menu-item">3. Netzwerkanalyse</a>      │
+            │  <a href="https://example.com/4" class="menu-item">4. Programm beenden</a>     │
+            └──────────────────────────┘
+        </div>
+    </div>
+
+    <!-- Weitere Textinhalte unterhalb -->
+    <div class="text-content">
+        <h1>Textinhalt auf der Seite</h1>
+        <p>Hier befindet sich der restliche Text auf der Seite. Das Dropdown-Menü wird über diesem Inhalt eingeblendet, ohne den Text zu verschieben.</p>
+        <p>Es ist also völlig unabhängig von der normalen Layoutstruktur und "schwebt" über allem.</p>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const menu = document.getElementById('dropdownMenu');
+            // Toggle das Dropdown-Menü (einblenden/ausblenden)
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
