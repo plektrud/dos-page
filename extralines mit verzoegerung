@@ -1,0 +1,46 @@
+const extraLines = [
+    "Video Adapter: compatibility mode",
+    "Keyboard: OK",
+    "Mouse: OK",
+    "Network: unkown device",
+    "FDD Controller: unable to locate disk drives",
+    "  Error: no bootable disk found",
+    " ",
+    " ",
+    "*** Fallback: loading from network ***",
+    "Checking for network connection...",
+    "Dialing... 00¬ù¥8è¢4┘Θ",
+    "Connecting to remote host archive.thiwa.de",
+    "Connected!",
+    " "
+]; 
+
+function showExtraLines() {
+    let lineIdx = 0;
+    function nextLine() {
+        if (lineIdx < extraLines.length) {
+            const line = extraLines[lineIdx];
+            const splitIndex = line.indexOf(':');  // Finde den Doppelpunkt
+            if (splitIndex !== -1) {
+                const firstPart = line.substring(0, splitIndex + 1);  // Text vor dem Doppelpunkt
+                const secondPart = line.substring(splitIndex + 1);  // Text nach dem Doppelpunkt
+                
+                // Zeige den Text vor dem Doppelpunkt sofort an
+                bootscreenText.textContent += firstPart + " ";
+                
+                // Zeige den Text nach dem Doppelpunkt mit einer Verzögerung von 1 Sekunde
+                setTimeout(() => {
+                    bootscreenText.textContent += secondPart + "\n";
+                }, 1000);  // 1 Sekunde Verzögerung
+            } else {
+                // Zeige die Zeile ohne Doppelpunkt sofort an
+                bootscreenText.textContent += line + "\n";
+            }
+            lineIdx++;
+            setTimeout(nextLine, 700); // Fortfahren mit der nächsten Zeile
+        } else {
+            showPromptAndBlinkCursor(); // Eingabeaufforderung anzeigen, wenn alle Zeilen durch sind
+        }
+    }
+    nextLine();
+}
