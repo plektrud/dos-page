@@ -84,7 +84,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 }
 
 .content-box {
-  border: solid white;
+  border: solid 2px white;
   padding: 10px;
 }
 
