@@ -83,6 +83,10 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   cursor: none !important;
 }
 
+.content-box {
+  border: solid white;
+}
+
 /* Container für Side Menu + Content */
 .container {
   display: flex;
