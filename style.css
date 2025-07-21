@@ -231,7 +231,7 @@ a, a:hover {
 
 .status {
   animation: blink-green-bg 3s steps(1, start) infinite;
-  padding: 0px 0px 0px 1px;
+  padding: 5px;
   font-weight: normal;
 }
 
