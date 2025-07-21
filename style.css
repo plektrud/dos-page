@@ -19,6 +19,8 @@ body.os, html.os {
   color: #ffffff;
   cursor: none !important; /* Mauszeiger komplett ausblenden */
   font-weight: normal;
+  background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='8' height='16'> <text x='0' y='14' font-family='monospace' font-size='14' fill='lightgray'>░</text> </svg>");
+  background-repeat: repeat;
 }
 
 body.bootscreen {
@@ -70,12 +72,13 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 .side-content {
   background-color: #0000AA;
   border: 2px solid #00AAAA;
-  margin: 10px 5px 25px 10px;
+  margin: 10px 10px 30px 10px;
   width: 200px;
   padding: 10px 5px 25px 5px;
   box-sizing: border-box;
   cursor: none !important;
   overflow-y: auto;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .side-content a {
@@ -98,11 +101,12 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 .main-content {
   flex-grow: 1;
   border: 2px solid #00AAAA;
-  margin: 10px 10px 25px 5px;
+  margin: 10px 20px 30px 10px;
   padding: 10px 15px 30px 5px;
   background-color: #0000AA;
   box-sizing: border-box;
   overflow-y: auto;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Hamburger Button */
