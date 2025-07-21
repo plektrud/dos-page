@@ -90,13 +90,16 @@
   }
 
   // Menü-Links anklickbar machen (laden neuer Sektionen)
-  document.querySelectorAll('.top-menu a').forEach(link => {
-    link.addEventListener('click', e => {
+document.querySelectorAll('.top-menu a').forEach(link => {
+  link.addEventListener('click', e => {
+    const section = link.dataset.section;
+    if (section) {
       e.preventDefault();
-      const section = link.dataset.section;
       loadSection(section);
-    });
+    }
+    // Wenn kein data-section, dann Standardverhalten (Link folgt normal)
   });
+});
 
   // Hamburger-Button
   const hamburger = document.getElementById('hamburger-btn');
