@@ -85,6 +85,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 
 .content-box {
   border: solid white;
+  padding: 10px;
 }
 
 /* Container für Side Menu + Content */
@@ -193,10 +194,14 @@ h2 {
 }
 
 h3 {
-  margin-top: 0;
+  margin-top: -24px;
   margin-bottom: 5px;
-  color: #FFFF55;
+  color: #fff;
   font-weight: normal;
+  background: #00a;
+  display: table-caption;
+  padding: 4px 6px;
+  font-size: inherit;
 }
 
 p {
