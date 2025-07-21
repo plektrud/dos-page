@@ -64,6 +64,9 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   margin-top: -15px; /*der Text rutscht über die Border oben*/
   margin-left: 15px;
 }
+
+.top-menu a::first-letter {
+  color: #a00;
 }
 
 .top-menu a:hover {
