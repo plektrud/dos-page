@@ -82,7 +82,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 /* Container für Side Menu + Content */
 .container {
   display: flex;
-  height: calc(100vh - 50px); /* 30px für top-menu + 30px für footer */
+  height: calc(100vh - 30px); /* 30px für top-menu + 30px für footer */
 }
 
 /* Side Menu */
@@ -205,7 +205,7 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 30px;
+  height: 10px;
   color: #ffffff;
   z-index: 100;
   font-family: 'Perfect DOS VGA 437 Win', monospace;
@@ -216,7 +216,7 @@ p {
 }
 
 .footer-menu div {
-  padding: 4px 6px;
+  padding: 3px 6px;
   margin-left: 20px;
   margin-bottom: -16px;
   background: #0aa;
