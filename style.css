@@ -104,6 +104,9 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   cursor: none !important;
 }
 
+.side-content a::first-letter {
+  color: #a00;
+
 .side-content a:hover {
   background-color: #ffff00;
   color: #000000;
