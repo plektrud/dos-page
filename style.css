@@ -69,6 +69,10 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   color: #a00;
 }
 
+.red-letter {
+  color: #a00;
+}
+
 .top-menu a:hover {
   background-color: #ffff00; 
   color: #000000;
