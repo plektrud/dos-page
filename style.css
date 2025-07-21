@@ -88,9 +88,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   padding: 10px;
 }
 
-.content-box  {
-  border: solid 2px white;
-  padding: 10px;
+.content-box p {
   margin: 6px
 }
 
@@ -104,7 +102,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 /* Side Menu */
 .side-content {
   background-color: #0000AA;
-  border: 2px solid #00AAAA;
+  border: 2px solid white;
   margin: 15px 10px 40px 20px;
   width: 200px;
   padding: 10px 5px 25px 5px;
@@ -137,7 +135,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 /* Hauptbereich */
 .main-content {
   flex-grow: 1;
-  border: 2px solid #00AAAA;
+  border: 2px solid white;
   margin: 15px 30px 40px 10px;
   padding: 10px 15px 30px 5px;
   background-color: #0000AA;
