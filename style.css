@@ -88,6 +88,13 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   padding: 10px;
 }
 
+.content-box  {
+  border: solid 2px white;
+  padding: 10px;
+  margin: 6px
+}
+
+
 /* Container für Side Menu + Content */
 .container {
   display: flex;
