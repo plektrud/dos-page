@@ -61,6 +61,9 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   text-decoration: none;
   display: inline-block;
   cursor: none !important;
+  margin-top: -15px; /*der Text rutscht über die Border oben*/
+  margin-left: 15px;
+}
 }
 
 .top-menu a:hover {
@@ -72,7 +75,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 /* Container für Side Menu + Content */
 .container {
   display: flex;
-  height: calc(100vh - 60px); /* 30px für top-menu + 30px für footer */
+  height: calc(100vh - 50px); /* 30px für top-menu + 30px für footer */
 }
 
 /* Side Menu */
@@ -203,6 +206,10 @@ p {
 
 .footer-menu div {
   padding: 4px 6px;
+  margin-left: 20px;
+  margin-bottom: -16px;
+  background: #0aa;
+  margin-right: 20px;
 }
 
 /* Custom DOS Cursor */
