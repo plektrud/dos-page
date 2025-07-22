@@ -1,9 +1,14 @@
-  // Cursor Positionierung
-  const cursor = document.querySelector('.custom-dos-cursor');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = (e.pageX + 1) + 'px';
-    cursor.style.top = (e.pageY + 2) + 'px';
-  });
+const cursor = document.querySelector('.custom-dos-cursor');
+// Definiere die Breite und Höhe des Cursors
+const cursorWidth = 9;  // Beispiel: 9px
+const cursorHeight = 16; // Beispiel: 16px
+
+// Cursor Positionierung und Hover-Ereignisse zusammenfassen
+document.addEventListener('mousemove', e => {
+  // Berechne die Position des Cursors so, dass er das Zentrum des Rechtecks trifft
+  cursor.style.left = (e.pageX - cursorWidth / 2) + 'px';
+  cursor.style.top = (e.pageY - cursorHeight / 2) + 'px';
+});
 
 // Cursor-Farbe bei Hover über Links und Dropdown-Button
 document.body.addEventListener('mouseover', e => {
@@ -27,14 +32,14 @@ document.body.addEventListener('mouseout', e => {
 });
 
 // Cursor-Funktion für dynamisch geladenen Inhalt (Side + Content)
-  function bindCustomCursor() {
-    // Cursor auf Links in Side und Main-Content
-    document.querySelectorAll('#side-menu a, #main-content a').forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        cursor.style.color = '#000000';
-      });
-      link.addEventListener('mouseleave', () => {
-        cursor.style.color = '#ffffff';
-      });
+function bindCustomCursor() {
+  // Cursor auf Links in Side und Main-Content
+  document.querySelectorAll('#side-menu a, #main-content a').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      cursor.style.color = '#000000';
     });
-  }
+    link.addEventListener('mouseleave', () => {
+      cursor.style.color = '#ffffff';
+    });
+  });
+}
