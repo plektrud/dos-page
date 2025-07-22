@@ -109,6 +109,10 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   border-radius: 0;
 }
 
+.top-menu .dropdown .dropdown-btn::first-letter {
+  color: #a00;
+}
+
 /* Hover-Effekt */
 .top-menu .dropdown .dropdown-btn:hover {
   background-color: #ffff00; 
