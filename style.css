@@ -7,7 +7,8 @@
 }
 
 body, html {
-  font-family: 'MorePerfectDOSVGA', monospace;
+    font-family: 'MorePerfectDOSVGA', monospace;
+    cursor: none !important;
 }
 body.index  {
           background: #000;
@@ -351,7 +352,9 @@ a, a:hover {
 }
 
 .dropdown-content a:hover {
-    background-color: #ffff00;
+  background-color: #ffff00; 
+  color: #000000;
+  cursor: none !important;
 }
 
 /* Zeige die Liste an, wenn der Button geklickt wird */
