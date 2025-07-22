@@ -8,15 +8,15 @@
 <body class="os">
 
   <div class="top-menu">
+    <a href="#" data-section="directory">≡</a>
     <div class="dropdown">
-        <button class="dropdown-btn"><span class="red-letter">\</span>Directory</button>
+        <button class="dropdown-btn">Datei</button>
         <div class="dropdown-content">
             <a href="#">Link 1</a>
             <a href="#">Link 2</a>
             <a href="#">Link 3</a>
         </div>
     </div>
-    <a href="#" data-section="datei">Datei</a>
     <a href="#" data-section="bearbeiten">Bearbeiten</a>
     <a href="#" data-section="ansicht">Ansicht</a>
     <a href="#" data-section="extras">Extras</a>
@@ -39,12 +39,13 @@
 
   <div class="custom-dos-cursor">▒</div>
 
-  <script>
-      // Start mit "datei"
-      loadSection('datei');
-  </script>
+
     
   <script src="js/loadcontent.js"></script>
+  <script>
+    // Start mit "datei"
+    loadSection('directory');
+  </script>
   <script src="js/cursor.js"></script>
   <script src="js/clock.js"></script>
   <script src="js/top-menu.js"></script>
