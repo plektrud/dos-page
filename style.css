@@ -175,7 +175,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   box-sizing: border-box;
   cursor: none !important;
   overflow-y: auto;
-  box-shadow: 0px 0px 0px 5px #0000aa, 15px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 0px 3px #0000aa, 15px 15px rgba(0, 0, 0, 0.5);
  }
 
 .side-content a {
@@ -207,7 +207,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   background-color: #0000AA;
   box-sizing: border-box;
   overflow-y: auto;
-  box-shadow: 0px 0px 0px 5px #0000aa, 15px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 0px 3px #0000aa, 15px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Hamburger Button */
