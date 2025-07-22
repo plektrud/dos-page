@@ -1,0 +1,6 @@
+       function toggleVisibility(folderElement) {
+            const subList = folderElement.querySelector('ul');
+            if (subList) {
+                subList.classList.toggle('hidden');
+            }
+        }
