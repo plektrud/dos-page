@@ -121,10 +121,11 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
     display: none; /* Verstecke die Liste initial */
     position: absolute;
     min-width: 160px;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    border: solid 2px white;
     margin-top: 15px;
     margin-left: -15px;
+    background-color: #0aa;
+    box-shadow: 0px 0px 0px 5px #0aa, 15px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Links im Dropdown */
@@ -132,8 +133,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
     color: black;
     text-decoration: none;
     display: block;
-    min-height: 35px;
-    line-height: 1.4;
+    margin-top: 0;
 }
 
 .top-menu .dropdown-content a:hover {
@@ -175,7 +175,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   box-sizing: border-box;
   cursor: none !important;
   overflow-y: auto;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 0px 5px #0000aa, 15px 15px rgba(0, 0, 0, 0.5);
  }
 
 .side-content a {
@@ -207,7 +207,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   background-color: #0000AA;
   box-sizing: border-box;
   overflow-y: auto;
-  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 0px 5px #0000aa, 15px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Hamburger Button */
