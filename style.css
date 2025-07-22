@@ -363,6 +363,10 @@ a, a:hover {
         cursor: none !important;
 }
 
+.main-frame {
+        cursor: none !important;
+}
+
 
 #os-info {
   display: none;
