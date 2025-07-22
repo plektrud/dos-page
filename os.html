@@ -60,16 +60,6 @@
     }
   });
 
-  // Uhr
-  function updateClock() {
-    const now = new Date();
-    const date = now.toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit', year: 'numeric' });
-    const time = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-    document.getElementById('clock').textContent = date + ' ' + time;
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
-
   // Lade Side-Menu und Content per Fetch
   async function loadSection(name) {
     try {
@@ -97,18 +87,6 @@
     }
   }
 
-  // Menü-Links anklickbar machen (laden neuer Sektionen)
-document.querySelectorAll('.top-menu a').forEach(link => {
-  link.addEventListener('click', e => {
-    const section = link.dataset.section;
-    if (section) {
-      e.preventDefault();
-      loadSection(section);
-    }
-    // Wenn kein data-section, dann Standardverhalten (Link folgt normal)
-  });
-});
-
   // Hamburger-Button
   const hamburger = document.getElementById('hamburger-btn');
   const sideMenu = document.getElementById('side-menu');
@@ -133,6 +111,8 @@ document.querySelectorAll('.top-menu a').forEach(link => {
   // Start mit "datei"
   loadSection('datei');
 </script>
+<script src="js/clock.js"></script>
+<script src="js/top-menu.js"></script>
 <script src="js/dropdown.js"></script>
 </body>
 </html>
