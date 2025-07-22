@@ -224,14 +224,24 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
     padding-left: 20px;
 }
 .side-content .directory li.folder::before {
-    content: "└≡ ";
+    content: "├≡ ";
     cursor: pointer;
 }
 .side-content .directory li.file::before {
-    content: "└─ ";
+    content: "├─ ";
 }
 .side-content .directory .hidden {
     display: none;
+}
+
+        /* Für das letzte Ordner-Element ein anderes Symbol */
+.side-content .directory li.folder:last-child::before {
+    content: "└≡ ";
+}
+
+/* Für das letzte File-Element ein anderes Symbol */
+.side-content .directory li.file:last-child::before {
+    content: "└─ ";
 }
 
 
