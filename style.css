@@ -225,8 +225,14 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 }
 .side-content .directory li.folder::before {
     content: "├≡ ";
-    cursor: pointer;
+    /**cursor: pointer;**/
 }
+.side-content .directory li.folder:hover {
+  background-color: #ffff00;
+  color: #000000;
+  cursor: none !important;
+}
+
 .side-content .directory li.file::before {
     content: "├─ ";
 }
