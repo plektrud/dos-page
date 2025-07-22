@@ -8,10 +8,11 @@
 
 body, html {
     font-family: 'MorePerfectDOSVGA', monospace;
-    cursor: none !important;
+    
 }
 body.index  {
-          background: #000;
+        background: #000;
+        cursor: none !important;
       }
 body.index iframe {
           width: 100%;
