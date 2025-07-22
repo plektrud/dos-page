@@ -39,79 +39,15 @@
 
   <div class="custom-dos-cursor">▒</div>
 
-<script>
-  // Cursor Positionierung
-  const cursor = document.querySelector('.custom-dos-cursor');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = (e.pageX + 1) + 'px';
-    cursor.style.top = (e.pageY + 2) + 'px';
-  });
-
-  // Cursor-Farbe bei Hover über Links
-  document.body.addEventListener('mouseover', e => {
-    if (e.target.tagName === 'A') {
-      cursor.style.color = '#000000';  // Schwarz beim Hover
-    }
-  });
-  document.body.addEventListener('mouseout', e => {
-    if (e.target.tagName === 'A') {
-      cursor.style.color = '#ffffff';  // Weiß normal
-    }
-  });
-
-  // Lade Side-Menu und Content per Fetch
-  async function loadSection(name) {
-    try {
-      // Lade Menü HTML
-      const menuResp = await fetch(`top-menu/${name}/menu.html`);
-      if (!menuResp.ok) throw new Error('Menü nicht gefunden');
-      const menuHTML = await menuResp.text();
-
-      // Lade Content HTML
-      const contentResp = await fetch(`top-menu/${name}/content.html`);
-      if (!contentResp.ok) throw new Error('Content nicht gefunden');
-      const contentHTML = await contentResp.text();
-
-      // Setze Inhalte
-      document.getElementById('side-menu').innerHTML = menuHTML;
-      document.getElementById('main-content').innerHTML = contentHTML;
-
-      // Maus-Cursor neu binden (wegen neuem Inhalt)
-      bindCustomCursor();
-
-    } catch (e) {
-      console.error(e);
-      document.getElementById('side-menu').textContent = 'Fehler beim Laden des Menüs';
-      document.getElementById('main-content').textContent = 'Fehler beim Laden des Inhalts';
-    }
-  }
-
-  // Hamburger-Button
-  const hamburger = document.getElementById('hamburger-btn');
-  const sideMenu = document.getElementById('side-menu');
-  hamburger.addEventListener('click', () => {
-    const isOpen = sideMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', isOpen);
-  });
-
-  // Cursor-Funktion für dynamisch geladenen Inhalt (Side + Content)
-  function bindCustomCursor() {
-    // Cursor auf Links in Side und Main-Content
-    document.querySelectorAll('#side-menu a, #main-content a').forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        cursor.style.color = '#000000';
-      });
-      link.addEventListener('mouseleave', () => {
-        cursor.style.color = '#ffffff';
-      });
-    });
-  }
-
-  // Start mit "datei"
-  loadSection('datei');
-</script>
-<script src="js/clock.js"></script>
-<script src="js/top-menu.js"></script>
-<script src="js/dropdown.js"></script>
+  <script>
+      // Start mit "datei"
+      loadSection('datei');
+  </script>
+    
+  <script src="js/loadcontent.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/top-menu.js"></script>
+  <script src="js/dropdown.js"></script>
 </body>
 </html>
