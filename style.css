@@ -28,7 +28,7 @@ body.os, html.os {
   color: #ffffff;
   cursor: none !important; /* Mauszeiger komplett ausblenden */
   font-weight: normal;
-  background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='8' height='16'> <text x='0' y='14' font-family='monospace' font-size='14' fill='lightgray'>░</text> </svg>");
+  background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='8' height='16'> <text x='0' y='14' font-family='monospace' font-size='16' fill='lightgray'>░</text> </svg>");
   background-repeat: repeat;
   border-inline: double thick;
   margin: 15px 10px 0px 10px;
@@ -122,10 +122,9 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
     position: absolute;
     min-width: 160px;
     border: solid 2px white;
-    margin-top: 15px;
-    margin-left: -15px;
+    margin-top: 3px;
     background-color: #0aa;
-    box-shadow: 0px 0px 0px 5px #0aa, 15px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 0px 3px #0aa, 15px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Links im Dropdown */
