@@ -1,8 +1,30 @@
 <!-- top-menu/directory/menu.html -->
 <div class="directory">
-  ├┬─ <a href="#" data-section="datei">Bearbeiten</a><br>
-  │├┬─ weiterer Punkt<br>
-  ││└─ weiterer Punkt<br>
-  │└─ noch ein Punkt<br>
-  └─ Ende
+    <ul>
+        <li class="folder" onclick="toggleVisibility(this)">
+            Ordner 1
+            <ul class="hidden">
+                <li class="file"><a href="#" data-section="datei">Datei A.txt</a></li>
+                <li class="file">Datei B.doc</li>
+                <li class="folder" onclick="toggleVisibility(this)">
+                    Unterordner A
+                    <ul class="hidden">
+                        <li class="file">Datei C.jpg</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="folder" onclick="toggleVisibility(this)">
+            Ordner 2
+            <ul class="hidden">
+                <li class="file">Datei D.pdf</li>
+            </ul>
+        </li>
+        <li class="folder" onclick="toggleVisibility(this)">
+            Ordner 3
+            <ul class="hidden">
+                <li class="file">Datei E.txt</li>
+            </ul>
+        </li>
+    </ul>
 </div>
