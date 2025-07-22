@@ -206,11 +206,20 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 }
 
 .side-content .directory a {
-  padding: 0;
-  margin: 0;
-  background-color: transparent;
-  color: white;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    display: inline-block;
 }
+
+.side-content .directory a:hover {
+  background-color: #ffff00;
+  color: #000000;
+  cursor: none !important;
+}
+
+
 
 /* Hauptbereich */
 .main-content {
