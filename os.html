@@ -9,6 +9,14 @@
 <body class="os">
 
   <div class="top-menu">
+    <div class="dropdown">
+        <button class="dropdown-btn"><span class="red-letter">\</span> Directory</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
     <a href="#" data-section="datei">Datei</a>
     <a href="#" data-section="bearbeiten">Bearbeiten</a>
     <a href="#" data-section="ansicht">Ansicht</a>
@@ -125,6 +133,6 @@ document.querySelectorAll('.top-menu a').forEach(link => {
   // Start mit "datei"
   loadSection('datei');
 </script>
-
+<script src="js/dropdown.js"></script>
 </body>
 </html>
