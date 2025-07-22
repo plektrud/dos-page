@@ -219,6 +219,21 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   cursor: none !important;
 }
 
+.side-content .directory ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+.side-content .directory li.folder::before {
+    content: "└≡ ";
+    cursor: pointer;
+}
+.side-content .directory li.file::before {
+    content: "└─ ";
+}
+.side-content .directory .hidden {
+    display: none;
+}
+
 
 
 /* Hauptbereich */
