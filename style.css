@@ -227,7 +227,9 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
     content: "├≡ ";
     /**cursor: pointer;**/
 }
-.side-content .directory li.folder:hover {
+
+/**Ordner im Directory beim Hover markieren**/
+.side-content .directory label:hover {
   background-color: #ffff00;
   color: #000000;
   cursor: none !important;
