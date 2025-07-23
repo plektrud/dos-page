@@ -472,3 +472,7 @@ input:focus {
   border: none; /* optional, falls du auch die Border entfernen willst */
 }
 
+label {
+    cursor: none !important;
+}
+    
