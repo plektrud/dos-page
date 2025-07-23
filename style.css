@@ -441,6 +441,7 @@ a, a:hover {
 
 .input-box input {
   background-color: transparent;
+  caret-color: #00ff00; /* DOS-grün */
   border: none;
   padding: 4px;
   width: 80%;
@@ -467,4 +468,9 @@ a, a:hover {
 @keyframes fake-cursorBlink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+input:focus {
+  outline: none;
+  border: none; /* optional, falls du auch die Border entfernen willst */
 }
