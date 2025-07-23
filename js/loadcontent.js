@@ -32,7 +32,7 @@ async function loadSection(name) {
 
     const storedName = localStorage.getItem('dosUserName');
     if (storedName && greeting) {
-      greeting.textContent = storedName;
+      greeting.textContent = `Willkommen zurück, ${storedName}!`;
     }
 
     if (input && greeting) {
@@ -41,7 +41,7 @@ async function loadSection(name) {
           const name = input.value.trim();
           if (name !== "") {
             localStorage.setItem('dosUserName', name);
-            greeting.textContent = name;
+            greeting.textContent = `Willkommen zurück, ${name}!`;
             updateCursorVisibility();
           }
         }
