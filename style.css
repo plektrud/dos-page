@@ -451,13 +451,8 @@ a, a:hover {
   font-size: 16px;
 }
 
-.input-wrapper {
-  display: inline-block;
+.input-box .fake-cursor {
   position: relative;
-}
-
-.fake-cursor {
- position: relative;
   top: 4px;
   color: #00ff00;
   font-family: 'MorePerfectDOSVGA', monospace;
