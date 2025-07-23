@@ -1,5 +1,5 @@
 document.addEventListener('click', function(event) {
-  const label = event.target.closest('.folder-label');
+  const label = event.target.closest('.label');
   if (!label) return;
 
   const folderElement = label.parentElement;
