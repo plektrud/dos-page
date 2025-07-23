@@ -434,6 +434,7 @@ a, a:hover {
   border: none;
   padding: 4px;
   width: 100%;
+    cursor: none !important; /* Mauszeiger komplett ausblenden */
 }
 
 .input-box input::after {
