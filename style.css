@@ -173,13 +173,13 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 .side-content {
   background-color: #0000AA;
   border: 2px solid white;
-  margin: 25px 10px 45px 20px;
+  margin: 25px 10px 30px 20px;
   width: 200px;
-  padding: 10px 5px 25px 5px;
+  padding: 5px 5px 25px 5px;
   box-sizing: border-box;
   cursor: none !important;
   overflow-y: auto;
-  box-shadow: 0px 6px 0px 3px #00a, 0px -6px 0px 3px #00a, 15px 21px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 0px 3px #00a, 0px -5px 0px 3px #00a, 15px 20px rgba(0, 0, 0, 0.5);
  }
 
 .side-content a {
@@ -264,12 +264,12 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 .main-content {
   flex-grow: 1;
   border: 2px solid white;
-  margin: 25px 25px 45px 15px;
-  padding: 10px 15px 30px 5px;
+  margin: 25px 25px 30px 15px;
+  padding: 5px 15px 30px 5px;
   background-color: #0000AA;
   box-sizing: border-box;
   overflow-y: auto;
-  box-shadow: 0px 6px 0px 3px #00a, 0px -6px 0px 3px #00a, 15px 21px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 0px 3px #00a, 0px -5px 0px 3px #00a, 15px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Hamburger Button */
