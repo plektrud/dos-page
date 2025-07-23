@@ -429,19 +429,19 @@ a, a:hover {
 }
 
 .input-box {
-    cursor: none !important; /* Mauszeiger komplett ausblenden */
-    background-color: black;
-    color: #00ff00;
-    border: solid 2px white;
+  cursor: none !important;
+  background-color: black;
+  color: #00ff00;
+  border: solid 2px white;
+  box-shadow: inset -3px -5px 0 #00a, inset 3px 5px 0 #00a;
+  padding: 5px;
 }
 
 .input-box input {
-  background-color: black;
-  color: #00ff00;
+  background-color: transparent;
   border: none;
   padding: 4px;
-  width: 50%;
-    cursor: none !important; /* Mauszeiger komplett ausblenden */
+  width: 80%;
 }
 
 .input-box input::after {
