@@ -1,19 +1,13 @@
-<script>
-  function saveName() {
-    const name = document.getElementById('username').value;
-    if (name.trim() !== "") {
-      localStorage.setItem('dosUserName', name);
-      showGreeting();
-    }
-  }
-
-  function showGreeting() {
-    const name = localStorage.getItem('dosUserName');
+document.addEventListener('click', function (event) {
+  if (event.target && event.target.id === 'saveBtn') {
+    const input = document.getElementById('username');
+    const name = input?.value.trim();
     if (name) {
-      document.getElementById('greeting').textContent = `Willkommen zurück, ${name}!`;
+      localStorage.setItem('dosUserName', name);
+      const greeting = document.getElementById('greeting');
+      if (greeting) {
+        greeting.textContent = `Willkommen zurück, ${name}!`;
+      }
     }
   }
-
-  // Beim Laden der Seite automatisch anzeigen
-  window.onload = showGreeting;
-</script>
+});
