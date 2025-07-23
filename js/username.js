@@ -21,6 +21,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-
-🧠 Optional: Eingabezeile im DOS-Stil
-css
