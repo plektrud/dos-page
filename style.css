@@ -154,7 +154,6 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 .content-box {
   border: solid 2px white;
   padding: 10px;
-  margin-left: 10px;
   margin-top: 10px;
 }
 
@@ -265,7 +264,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
   flex-grow: 1;
   border: 2px solid white;
   margin: 25px 25px 30px 15px;
-  padding: 5px 15px 30px 5px;
+  padding: 5px 7px 30px 7px;
   background-color: #0000AA;
   box-sizing: border-box;
   overflow-y: auto;
