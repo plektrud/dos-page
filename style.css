@@ -435,6 +435,7 @@ a, a:hover {
   border: solid 2px white;
   box-shadow: inset -3px -5px 0 #00a, inset 3px 5px 0 #00a;
   padding: 5px;
+  cursor: none !important;
 }
 
 .input-box input {
@@ -442,6 +443,8 @@ a, a:hover {
   border: none;
   padding: 4px;
   width: 80%;
+  color: #0f0;
+  cursor: none !important;
 }
 
 .input-box input::after {
