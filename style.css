@@ -428,12 +428,19 @@ a, a:hover {
   51%, 100% { opacity: 0; }
 }
 
+.input-box {
+    cursor: none !important; /* Mauszeiger komplett ausblenden */
+    background-color: black;
+    color: #00ff00;
+    border: solid 2px white;
+}
+
 .input-box input {
   background-color: black;
   color: #00ff00;
   border: none;
   padding: 4px;
-  width: 100%;
+  width: 50%;
     cursor: none !important; /* Mauszeiger komplett ausblenden */
 }
 
