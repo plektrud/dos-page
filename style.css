@@ -420,10 +420,10 @@ a, a:hover {
 
 #blink-cursor {
   display: inline-block;
-  animation: blink 1s steps(1) infinite;
+  animation: blink-cursorBlink 1s steps(1) infinite;
 }
 
-@keyframes blink {
+@keyframes blink-cursorBlink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
@@ -436,4 +436,12 @@ a, a:hover {
   width: 100%;
 }
 
+.input-box input::after {
+  content: "_";
+  animation: input-boxBlink 1s steps(1) infinite;
+}
+
+@keyframes input-boxBlink {
+  50% { opacity: 0; }
+}
 
