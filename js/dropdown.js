@@ -1,15 +1,12 @@
-// Öffnen/Schließen des Dropdowns bei Klick auf den Button
-document.addEventListener('click', function(event) {
-    const btn = event.target.closest('.dropdown-btn');
-    if (btn) {
-        event.stopPropagation();
-        const dropdown = btn.parentElement.querySelector('.dropdown-content');
-        dropdown.classList.toggle('show');
-        return;
-    }
+// Dropdown öffnen und schließen
+document.querySelector('.dropdown-btn').addEventListener('click', function(event) {
+    event.stopPropagation(); // Verhindert, dass das Klick-Event weitergegeben wird
+    document.querySelector('.dropdown').classList.toggle('show');
+});
 
-    // Wenn woanders geklickt wird, Dropdown schließen
-    document.querySelectorAll('.dropdown-content.show').forEach(drop => {
-        drop.classList.remove('show');
-    });
+// Schließe das Dropdown, wenn irgendwo anders geklickt wird
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.dropdown')) {
+        document.querySelector('.dropdown').classList.remove('show');
+    }
 });
