@@ -22,8 +22,6 @@ body.index iframe {
       }
 
 body.os, html.os {
-  margin: 0;
-  height: 100%;
   background-color: #0000AA;
   color: #ffffff;
   cursor: none !important; /* Mauszeiger komplett ausblenden */
@@ -31,12 +29,13 @@ body.os, html.os {
   background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='8' height='16'> <text x='0' y='14' font-family='monospace' font-size='16' fill='lightgray'>░</text> </svg>");
   background-repeat: repeat;
   border-inline: double thick;
-  margin: 15px 4px 0px 4px;
+  margin: 12px 4px 0px 4px;
   box-shadow: 0px 0px 0px 30px #00a, inset 0 0 0 4px #00a;
   outline: 2px solid #00a;
   outline-offset: -3.5px;
   z-index: -1;
   position: relative;  
+  padding-bottom: 10px;
 }
 
 body.bootscreen {
@@ -57,7 +56,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 /* Top Menu */
 .top-menu {
   background-color: #00aaaa;
-  /*padding: 4px 8px;*/
+  padding: 3px 8px 8px;
   display: flex;
   gap: 20px;
   cursor: none !important;
@@ -70,7 +69,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 }
 
 .top-menu a {
-  padding: 4px 6px;
+  padding: 0px 6px;
   background-color: #00aaaa;
   color: #ffffff;
   text-decoration: none;
@@ -104,7 +103,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 .top-menu .dropdown .dropdown-btn {
   background-color: transparent;
   color: white;
-  padding: 4px 6px;
+  padding: 0px 6px;
   border: none;
   border-radius: 5px;
   font: inherit;
@@ -352,20 +351,19 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 10px;
   color: #ffffff;
   z-index: 100;
   font-family: 'MorePerfectDOSVGA', monospace;
   border-bottom: thick double white;
   box-shadow: 0px 10px 0 10px #0aa;
   border-inline: thick double white;
-  margin: 0 4px 10px 4px;
+  margin: 0 4px 6px 4px;
 }
 
 .footer-menu div {
-  padding: 3px 6px;
+  padding: 0 6px 0;
   margin-left: 20px;
-  margin-bottom: -16px;
+  margin-bottom: -13px;
   background: #0aa;
   margin-right: 20px;
 }
@@ -389,7 +387,7 @@ a, a:hover {
 
 .status {
   animation: blink-green-bg 3s steps(1, start) infinite;
-  padding: 5px;
+  padding: 0px;
   font-weight: normal;
 }
 
