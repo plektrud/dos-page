@@ -56,7 +56,7 @@ cursor: none !important; /* Mauszeiger komplett ausblenden */
 /* Top Menu */
 .top-menu {
   background-color: #00aaaa;
-  padding: 3px 8px 8px;
+  padding: 3px 8px 0px;
   display: flex;
   gap: 20px;
   cursor: none !important;
