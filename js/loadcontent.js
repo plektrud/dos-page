@@ -14,6 +14,13 @@
       // Setze Inhalte
       document.getElementById('side-menu').innerHTML = menuHTML;
       document.getElementById('main-content').innerHTML = contentHTML;
+      
+    // zeige gespeicherten Namen
+    const greeting = document.getElementById('greeting');
+    const storedName = localStorage.getItem('dosUserName');
+    if (greeting && storedName) {
+      greeting.textContent = `Willkommen zurück, ${storedName}!`;
+    }
 
       // Maus-Cursor neu binden (wegen neuem Inhalt)
       bindCustomCursor();
