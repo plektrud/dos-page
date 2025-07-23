@@ -436,6 +436,7 @@ a, a:hover {
   box-shadow: inset -3px -5px 0 #00a, inset 3px 5px 0 #00a;
   padding: 5px;
   cursor: none !important;
+  font-family: 'MorePerfectDOSVGA', monospace;  
 }
 
 .input-box input {
@@ -445,14 +446,25 @@ a, a:hover {
   width: 80%;
   color: #0f0;
   cursor: none !important;
+  font-family: 'MorePerfectDOSVGA', monospace;  
 }
 
-.input-box input::after {
-  content: "_";
-  animation: input-boxBlink 1s steps(1) infinite;
+.input-wrapper {
+  display: inline-block;
+  position: relative;
 }
 
-@keyframes input-boxBlink {
+.fake-cursor {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  color: #00ff00;
+  font-family: 'MorePerfectDOSVGA', monospace;
+  animation: fake-cursorBlink 1s steps(1) infinite;
+  pointer-events: none;
+}
+
+@keyframes fake-cursorBlink {
+  0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
-
