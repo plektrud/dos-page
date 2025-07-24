@@ -42,13 +42,14 @@
 
     
   <script src="js/loadcontent.js"></script>
-    <script>
-    // Start mit "directory"
-    loadSection('directory');
-   </script>
   <script src="js/username.js"></script>
   <script>
-    initializeUsernameUI();
+  loadSection('directory');
+  loadSection('directory').then(result => {
+    if (result?.success) {
+      initializeUsernameUI();
+    }
+  });
   </script>
   <script src="js/cursor.js"></script>
   <script src="js/clock.js"></script>
