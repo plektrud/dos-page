@@ -458,7 +458,7 @@ a {
 .input-box {
   cursor: none !important;
   background-color: var(--black);
-  color: var(--light green);
+  color: var(--light-green);
   border: solid 2px var(--white);
   box-shadow: inset -3px -5px 0 var(--blue), inset 3px 5px 0 var(--blue);
   padding: 5px;
@@ -468,11 +468,11 @@ a {
 
 .input-box input {
   background-color: transparent;
-  caret-color: var(--light green); /* DOS-grün */
+  caret-color: var(--light-green); /* DOS-grün */
   border: none;
   padding: 4px;
   width: 80%;
-  color: var(--light green);
+  color: var(--light-green);
   cursor: none !important;
   font-family: 'MorePerfectDOSVGA', monospace;  
   font-size: 16px;
@@ -481,7 +481,7 @@ a {
 .input-box .fake-cursor {
   position: relative;
   top: 4px;
-  color: var(--light green);
+  color: var(--light-green);
   font-family: 'MorePerfectDOSVGA', monospace;
   animation: fake-cursorBlink 1s steps(1) infinite;
   pointer-events: none;
