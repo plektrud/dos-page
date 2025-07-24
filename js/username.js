@@ -3,6 +3,16 @@ function initializeUsernameUI() {
   const greeting = document.getElementById('greeting');
   const user = document.getElementById('user');
   const cursor = document.querySelector('.fake-cursor');
+  const usernameBox = document.getElementById('username-box');
+  const storedName = localStorage.getItem('dosUserName');
+
+if (usernameBox) {
+  if (storedName) {
+    usernameBox.style.display = 'none'; // Verstecke Eingabe
+  } else {
+    usernameBox.style.display = 'block'; // Zeige Eingabe
+  }
+}
 
   // Funktion zum Aktualisieren der Sichtbarkeit des Cursors
   function updateCursorVisibility() {
@@ -32,7 +42,9 @@ function initializeUsernameUI() {
         const name = input.value.trim();
         if (name !== "") {
           localStorage.setItem('dosUserName', name);
-          
+          if (usernameBox) {
+              usernameBox.style.display = 'none';
+            }
           // Aktualisieren des Begrüßungstextes, je nachdem welche ID vorhanden ist
           if (greeting) {
             greeting.textContent = `Willkommen zurück, ${name}!`;
@@ -40,7 +52,6 @@ function initializeUsernameUI() {
           if (user) {
             user.textContent = name;
           }
-
           updateCursorVisibility();
         }
       }
