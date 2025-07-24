@@ -384,7 +384,7 @@ h3 {
   color: var(--blue);
   font-weight: normal;
   background: var(--white);
-  display: table-caption;
+  display: ruby-text;
   padding-left: 3px;
   font-size: inherit;
   
