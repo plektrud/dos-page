@@ -26,7 +26,6 @@ if (usernameBox) {
 
   updateCursorVisibility();
 
-  const storedName = localStorage.getItem('dosUserName');
   if (storedName) {
     if (greeting) {
       greeting.textContent = `Willkommen zurück, ${storedName}!`;
