@@ -44,7 +44,6 @@
   <script src="js/loadcontent.js"></script>
   <script src="js/username.js"></script>
   <script>
-  loadSection('directory');
   loadSection('directory').then(result => {
     if (result?.success) {
       initializeUsernameUI();
