@@ -13,3 +13,8 @@ document.querySelectorAll('.top-menu a').forEach(link => {
     // Wenn kein data-section, dann Standardverhalten (Link folgt normal)
   });
 });
+
+document.getElementById('esc-link').addEventListener('click', () => {
+  localStorage.removeItem('dosUserName');
+  // Link wird normal ausgeführt – kein preventDefault!
+});
