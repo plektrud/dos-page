@@ -1,21 +1,13 @@
 /* Grundlegendes & Body */
 :root {
-  --black: #000000;
-  --dark-gray: #555555;
-  --blue: #0000AA;
-  --light-blue: #5555FF;
-  --green: #00AA00;
-  --light-green: #55FF55;
-  --cyan: #00AAAA;
-  --light-cyan: #55FFFF;
-  --red: #AA0000;
-  --light-red: #FF5555;
-  --magenta: #AA00AA;
-  --light-magenta: #FF55FF;
-  --brown: #AA5500;
-  --yellow: #FFFF55;
-  --light-gray: #AAAAAA;
-  --white: #FFFFFF;
+  --black: #000000;        --dark-gray: #555555;
+  --blue: #0000AA;         --light-blue: #5555FF;
+  --green: #00AA00;        --light-green: #55FF55;
+  --cyan: #00AAAA;         --light-cyan: #55FFFF;
+  --red: #AA0000;          --light-red: #FF5555;
+  --magenta: #AA00AA;      --light-magenta: #FF55FF;
+  --brown: #AA5500;        --yellow: #FFFF55;
+  --light-gray: #AAAAAA;   --white: #FFFFFF;
 }
 
 @font-face {
