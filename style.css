@@ -379,9 +379,17 @@ p {
 }
 
 /* Cursor bleibt überall ausgeblendet auch auf Links */
-a, a:hover {
-  cursor: none !important;
+a:hover {
+    background: #ff0;
+    color: black;
+    cursor: none !important;
 }
+
+a {
+    color: white;
+    cursor: none !important;
+}
+
 
 .status {
   animation: blink-green-bg 3s steps(1, start) infinite;
@@ -476,11 +484,3 @@ label {
     cursor: none !important;
 }
     
-a:hover {
-    background: #ff0;
-  color: black;
-}
-
-a {
-    color: white;
-}
