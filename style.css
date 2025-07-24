@@ -476,3 +476,11 @@ label {
     cursor: none !important;
 }
     
+a:hover {
+    background: #ff0;
+  color: black;
+}
+
+a {
+    color: white;
+}
