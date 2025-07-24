@@ -344,14 +344,15 @@ h2 {
 }
 
 h3 {
-  margin-top: -24px;
+  margin-top: -20px;
   margin-bottom: 5px;
-  color: var(--white);
+  color: var(--blue);
   font-weight: normal;
-  background: var(--blue);
+  background: var(--white);
   display: table-caption;
-  padding: 4px 6px;
+  padding-left: 3px;
   font-size: inherit;
+  
 }
 
 p {
