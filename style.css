@@ -169,6 +169,11 @@ white-space: pre; font-size: 16px;
 
 .content-box p {
   margin-left: 5px;
+  margin-top: unset;
+}
+
+.content-box p:first-of-type {
+  margin-top: -10px;
 }
 
 .content-box p:last-of-type {
