@@ -169,9 +169,11 @@ white-space: pre; font-size: 16px;
 
 .content-box p {
   margin-left: 5px;
-    margin-bottom: -5px;
 }
 
+.content-box p:last-of-type {
+  margin-bottom: -5px;
+}
 
 /* Container für Side Menu + Content */
 .container {
