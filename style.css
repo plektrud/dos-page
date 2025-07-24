@@ -458,7 +458,8 @@ a, a:hover {
   font-family: 'MorePerfectDOSVGA', monospace;
   animation: fake-cursorBlink 1s steps(1) infinite;
   pointer-events: none;
-  left: -560px;
+  left: -5557px;
+  top: 0px;
   visibility: visible;
 }
 
