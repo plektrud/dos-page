@@ -22,4 +22,7 @@ async function loadSection(name) {
     document.getElementById('side-menu').textContent = 'Fehler beim Laden des Menüs';
     document.getElementById('main-content').textContent = 'Fehler beim Laden des Inhalts';
   }
+  return {
+  success: true
+};
 }
