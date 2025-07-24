@@ -4,7 +4,11 @@ document.querySelectorAll('.top-menu a').forEach(link => {
     const section = link.dataset.section;
     if (section) {
       e.preventDefault();
-      loadSection(section);
+      loadSection(section).then(result => {
+        if (result?.success) {
+          initializeUsernameUI();
+        }
+});
     }
     // Wenn kein data-section, dann Standardverhalten (Link folgt normal)
   });
