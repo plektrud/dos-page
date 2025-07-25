@@ -562,7 +562,7 @@ label {
 }
 
 .museum-sha {
-  background: var(--light-gray);
+  background: var(--dark-gray);
   color: var(--red);
 }
 
