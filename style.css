@@ -569,4 +569,9 @@ label {
 .museum-hum {
   color: var(--light-blue);
 }
+
+.museum-gro {
+  background: var(--green);
+  color: var(--brown);
+}
   
