@@ -214,7 +214,7 @@ __________________________________________
         let frameIndex = 0;
 
         function updateFrame() {
-            document.getElementById('ascii').textContent = frames[frameIndex];
+            document.getElementById('ascii').innerHTML = frames[frameIndex];
             
             // Wenn der letzte Frame erreicht ist, stoppe die Animation
             if (frameIndex === frames.length - 1) {
