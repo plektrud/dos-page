@@ -567,7 +567,11 @@ label {
 }
 
 .museum-hum {
-  color: var(--light-blue);
+  color: var(--black);
+}
+
+.museum-hea {
+  color: var(--brown);
 }
 
 .museum-gro {
