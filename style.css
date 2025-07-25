@@ -1,5 +1,5 @@
-/* Grundlegendes & Body */
 :root {
+  /* Definition CGA Farben */
   --black: #000000;        --dark-gray: #4E4E4E;
   --blue: #0000C4;         --light-blue: #4E4EDC;
   --green: #00C400;        --light-green: #4EDC4E;
@@ -10,11 +10,12 @@
   --light-gray: #C4C4C4;   --white: #FFFFFF;
 }
 
+/* Standard Schriftart */
 @font-face {
-    font-family: 'MorePerfectDOSVGA'; /* Name, den du der Schriftart gibst */
-    src: url('fonts/MorePerfectDOSVGA.ttf') format('truetype'); /* Pfad zur TTF-Datei */
-    font-weight: normal;  /* Standardgewicht der Schriftart */
-    font-style: normal;   /* Standardstil der Schriftart */
+    font-family: 'MorePerfectDOSVGA'; 
+    src: url('fonts/MorePerfectDOSVGA.ttf') format('truetype'); 
+    font-weight: normal;  
+    font-style: normal;  
 }
 
 body, html {
