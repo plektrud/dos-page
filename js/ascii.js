@@ -50,7 +50,7 @@
          <span class="museum-col">|||<span class="museum-sha">|_) </span>|||<span class="museum-sha"> /\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
          <span class="museum-col">|||<span class="museum-sha">| \\ </span>|<span class="museum-hea">o</span>|<span class="museum-sha">/--\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
        <span class="museum-col">/='-'====<span class="museum-hum">/|\\</span>===='-'===='-'=\\</span>
-     <span class="museum-col">/==========<span class="museum-hum">/</span>=<span class="museum-hea">\\</span>=================\\</span>
+     <span class="museum-col">/==========<span class="museum-hum">/</span>=<span class="museum-hum">\\</span>=================\\</span>
    <span class="museum-col">/==================================\\</span>
  <span class="museum-col">/======================================\\</span>
 <span class="museum-gro">__________________________________________</span>
@@ -70,130 +70,130 @@
 <span class="museum-gro">__________________________________________</span>
             `,
             `
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  |||o   |||    |||.
-         ||||_) ||/|\\\\ ||||\\/||||.
-         |||| \\ ||//\\-\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==================================\\
- /======================================\\
-__________________________________________
+             ,______<span class="museum-col">/\\</span>______,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha"><span class="museum-hea">o</span>   </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>||<span class="museum-hum">/<span class="museum-sha">|\\</span>\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>||<span class="museum-hum">/</span><span class="museum-sha">/<span class="museum-hum">\\</span>-\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==================================\\</span>
+ <span class="museum-col">/======================================\\</span>
+<span class="museum-gro">__________________________________________</span>
             `,
             `
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  |||o_  |||    |||.
-         ||||_) ||/|/\\ ||||\\/||||.
-         |||| \\ ||//\\-\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==================================\\
- /======================================\\
-__________________________________________
+             ,______<span class="museum-col">/\\</span>______,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha"><span class="museum-hea">o_</span>  </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>||<span class="museum-hum">/<span class="museum-sha">|</span>/\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>||<span class="museum-hum">/</span><span class="museum-sha">/<span class="museum-hum">\\</span>-\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==================================\\</span>
+ <span class="museum-col">/======================================\\</span>
+<span class="museum-gro">__________________________________________</span>
             `,
             `
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  |||o/  |||    |||.
-         ||||_) ||/|/\\ ||||\\/||||.
-         |||| \\ ||//\\-\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==================================\\
- /======================================\\
-__________________________________________
+             ,______<span class="museum-col">/\\</span>______,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha"><span class="museum-hea">o/</span>  </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>||<span class="museum-hum">/<span class="museum-sha">|</span>/\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>||<span class="museum-hum">/</span><span class="museum-sha">/<span class="museum-hum">\\</span>-\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==================================\\</span>
+ <span class="museum-col">/======================================\\</span>
+<span class="museum-gro">__________________________________________</span>
             `,
             `
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  |||o_  |||    |||.
-         ||||_) ||/|/\\ ||||\\/||||.
-         |||| \\ ||//\\-\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==================================\\
- /======================================\\
-__________________________________________
+             ,______<span class="museum-col">/\\</span>______,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha"><span class="museum-hea">o_</span>  </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>||<span class="museum-hum">/<span class="museum-sha">|</span>/\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>||<span class="museum-hum">/</span><span class="museum-sha">/<span class="museum-hum">\\</span>-\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==================================\\</span>
+ <span class="museum-col">/======================================\\</span>
+<span class="museum-gro">__________________________________________</span>
             `,
             `
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  |||o/  |||    |||.
-         ||||_) ||/|/\\ ||||\\/||||.
-         |||| \\ ||//\\-\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==================================\\
- /======================================\\
-__________________________________________
+             ,______<span class="museum-col">/\\</span>______,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha"><span class="museum-hea">o/</span>  </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>||<span class="museum-hum">/<span class="museum-sha">|</span>/\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>||<span class="museum-hum">/</span><span class="museum-sha">/<span class="museum-hum">\\</span>-\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==================================\\</span>
+ <span class="museum-col">/======================================\\</span>
+<span class="museum-gro">__________________________________________</span>
             `,
             `
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  |||o_  |||    |||.
-         ||||_) ||/|/\\ ||||\\/||||.
-         |||| \\ ||//\\-\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==================================\\
- /======================================\\
-__________________________________________
+             ,______<span class="museum-col">/\\</span>______,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha"><span class="museum-hea">o_</span>  </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>||<span class="museum-hum">/<span class="museum-sha">|</span>/\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>||<span class="museum-hum">/</span><span class="museum-sha">/<span class="museum-hum">\\</span>-\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==================================\\</span>
+ <span class="museum-col">/======================================\\</span>
+<span class="museum-gro">__________________________________________</span>
+            `,
+            `             
+            ,______<span class="museum-col">/\\</span>______,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha"><span class="museum-hea">o</span>   </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>||<span class="museum-hum">/<span class="museum-sha">|\\</span>\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>||<span class="museum-hum">/</span><span class="museum-sha">/<span class="museum-hum">\\</span>-\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==================================\\</span>
+ <span class="museum-col">/======================================\\</span>
+<span class="museum-gro">__________________________________________</span>
             `,
             `
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  |||o   |||    |||.
-         ||||_) ||/|\\\\ ||||\\/||||.
-         |||| \\ ||//\\-\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==================================\\
- /======================================\\
-__________________________________________
+             ,______<span class="museum-col">/\\</span>______,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha"> <span class="museum-hea">o</span>  </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>|||<span class="museum-sha"><span class="museum-hum">/|\\</span> </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>|||<span class="museum-sha"><span class="museum-hum">/</span>-<span class="museum-hum">\\</span>\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==================================\\</span>
+ <span class="museum-col">/======================================\\</span>
+<span class="museum-gro">__________________________________________</span>
             `,
             `
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  ||| o  |||    |||.
-         ||||_) |||/|\\ ||||\\/||||.
-         |||| \\ |||/-\\\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==================================\\
- /======================================\\
-__________________________________________
-            `,
-            `
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  |||  o |||    |||.
-         ||||_) ||| /|\\||||\\/||||.
-         |||| \\ |||//-\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==================================\\
- /======================================\\
-__________________________________________
+             ,______<span class="museum-col">/\\</span>______,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha">  <span class="museum-hea">o</span> </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>|||<span class="museum-sha"> <span class="museum-hum">/|\\</span></span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>|||<span class="museum-sha">/<span class="museum-hum">/</span>-<span class="museum-hum">\\</span></span>|||<span class="museum-sha">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==================================\\</span>
+ <span class="museum-col">/======================================\\</span>
+<span class="museum-gro">__________________________________________</span>
             `,
              `
              ,______/\\______,
