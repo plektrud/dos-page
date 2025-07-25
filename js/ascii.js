@@ -11,7 +11,7 @@
      <span class="museum-col">/==============================\\</span>
    <span class="museum-col">/==========<span class="museum-hum">o</span>=======================\\</span>
  <span class="museum-col">/===========<span class="museum-hum">/|\\</span>========================\\</span>
-<span class="museum-gro">_____________<span class="museum-hum">/_<span class="museum-hum">\\</span>__________________________</span>
+<span class="museum-gro">_____________<span class="museum-hum">/</span>_<span class="museum-hum">\\</span>__________________________</span>
             `,
             `
              ,______/\\______,
