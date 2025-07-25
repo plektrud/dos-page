@@ -555,6 +555,7 @@ label {
   letter-spacing: -2px;
   color: var(--dark-gray);
   background: var(--light-blue);
+  width: fit-content;
 }
 
 .museum-col {
