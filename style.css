@@ -554,4 +554,19 @@ label {
     /* font-size: 24px; */
     line-height: 0.7;
     letter-spacing: -2px;
+    background: var(--light-blue);  
 }
+
+.museum-col {
+    background: var(--brown);
+}
+
+.museum-sha {
+  background: var(--light-gray);
+  color: var(--red);
+}
+
+.museum-hum {
+  color: var(--light-blue);
+}
+  
