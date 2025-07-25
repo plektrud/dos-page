@@ -554,6 +554,7 @@ label {
   line-height: 0.9;
   letter-spacing: -2px;
   color: var(--dark-gray);
+  background: var(--light-blue);
 }
 
 .museum-col {
