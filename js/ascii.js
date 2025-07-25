@@ -1,17 +1,17 @@
         const frames = [
-            `<span>
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  |||    |||    |||.
-         ||||_) ||| /\\ ||||\\/||||.
-         |||| \\ |||/--\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==========o=======================\\
- /===========/|\\========================\\
-_____________/_\\__________________________</span>
+            `
+             <span class="museum-col">,______/\\______,</span>
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-col">    </span>|||<span class="museum-col">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-col">|_) </span>|||<span class="museum-col"> /\\ </span>|||<span class="museum-col">|\\/|</span>|||.</span>
+         <span class="museum-col">||||<span class="museum-col"> \\ </span>|||<span class="museum-col">/--\\</span>|||<span class="museum-col">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==========<span class="museum-hum">o</span>=======================\\</span>
+ <span class="museum-col">/===========<span class="museum-hum">/|\\</span>========================\\</span>
+<span class="museum-col">_____________<span class="museum-hum">/_<span class="museum-hum">\\</span>__________________________</span>
             `,
             `
              ,______/\\______,
