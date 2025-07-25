@@ -74,9 +74,9 @@
        <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
        <span class="museum-col">|[][][][][][][][][][][][][]|</span>
        <span class="museum-col">',###,'',###,'',###,'',###,'</span>
-         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha"><span class="museum-hea">o</span>   </span>|||<span class="museum-sha">    </span>|||.</span>
-         <span class="museum-col">|||<span class="museum-sha">|_) </span>||<span class="museum-hum">/<span class="museum-hum">|\\</span><span class="museum-sha">\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
-         <span class="museum-col">|||<span class="museum-sha">| \\ </span>||<span class="museum-hum">/</span><span class="museum-sha">/<span class="museum-hum">\\</span>-\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-hea">o</span><span class="museum-sha">   </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>||<span class="museum-hum">/|\\</span><span class="museum-sha">\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>||<span class="museum-hum">/</span><span class="museum-sha">/</span><span class="museum-hum">\\</span><span class="museum-sha">-\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
        <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
      <span class="museum-col">/==============================\\</span>
    <span class="museum-col">/==================================\\</span>
