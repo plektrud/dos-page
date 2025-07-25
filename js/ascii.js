@@ -1,6 +1,6 @@
         const frames = [
             `
-             <span class="museum-col">,______/\\______,</span>
+             ,______<span class="museum-col">/\\</span>______,
        <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
        <span class="museum-col">|[][][][][][][][][][][][][]|</span>
        <span class="museum-col">',###,'',###,'',###,'',###,'</span>
@@ -224,18 +224,18 @@ __________________________________________
 __________________________________________
             `,                            
             `
-             ,______/\\______,
-       ,-,,-;__///_//\\\\_\\\\\\__;-,,-,
-       |[][][][][][][][][][][][][]|
-       ',###,'',###,'',###,'',###,'
-         ||| _  |||    |||    |||.
-         ||||_) ||| /\\ ||||\\/||||.
-         |||| \\ |||/--\\||||  ||||.
-       /='-'===='-'===='-'===='-'=\\
-     /==============================\\
-   /==================================\\
- /======================================\\
-__________________________________________
+             ,______<span class="museum-col">/\\</span>______,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
+       <span class="museum-col">|[][][][][][][][][][][][][]|</span>
+       <span class="museum-col">',###,'',###,'',###,'',###,'</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha">    </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>|||<span class="museum-sha"> /\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>|||<span class="museum-sha">/--\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
+       <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
+     <span class="museum-col">/==============================\\</span>
+   <span class="museum-col">/==================================\\</span>
+ <span class="museum-col">/======================================\\</span>
+<span class="museum-gro">__________________________________________</span>
             `
         ];
 
