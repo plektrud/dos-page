@@ -1,12 +1,12 @@
         const frames = [
             `
              <span class="museum-col">,______/\\______,</span>
-       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,
+       <span class="museum-col">,-,,-;__///_//\\\\_\\\\\\__;-,,-,</span>
        <span class="museum-col">|[][][][][][][][][][][][][]|</span>
        <span class="museum-col">',###,'',###,'',###,'',###,'</span>
-         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-col">    </span>|||<span class="museum-col">    </span>|||.</span>
-         <span class="museum-col">|||<span class="museum-col">|_) </span>|||<span class="museum-col"> /\\ </span>|||<span class="museum-col">|\\/|</span>|||.</span>
-         <span class="museum-col">||||<span class="museum-col"> \\ </span>|||<span class="museum-col">/--\\</span>|||<span class="museum-col">|  |</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha"> _  </span>|||<span class="museum-sha">    </span>|||<span class="museum-sha">    </span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">|_) </span>|||<span class="museum-sha"> /\\ </span>|||<span class="museum-sha">|\\/|</span>|||.</span>
+         <span class="museum-col">|||<span class="museum-sha">| \\ </span>|||<span class="museum-sha">/--\\</span>|||<span class="museum-sha">|  |</span>|||.</span>
        <span class="museum-col">/='-'===='-'===='-'===='-'=\\</span>
      <span class="museum-col">/==============================\\</span>
    <span class="museum-col">/==========<span class="museum-hum">o</span>=======================\\</span>
