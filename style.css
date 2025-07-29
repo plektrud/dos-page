@@ -618,3 +618,15 @@ label {
   cursor: none !important;
   font-family: 'MorePerfectDOSVGA', monospace;  
 }
+
+.prompt .fake-cursor {
+  position: relative;
+  top: 4px;
+  color: var(--light-green);
+  font-family: 'MorePerfectDOSVGA', monospace;
+  animation: fake-cursorBlink 1s steps(1) infinite;
+  pointer-events: none;
+  left: -557px;
+  top: 0px;
+  visibility: visible;
+}
