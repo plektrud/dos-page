@@ -204,7 +204,7 @@ body.terminal {
 /* Container für Side Menu + Content */
 .container {
   display: flex;
-  height: calc(100vh - 30px); /* 30px für top-menu + 30px für footer */
+  height: calc(100vh - 135px); /* 30px für top-menu + 30px für footer */
 }
 
 /* Side Menu */
@@ -401,7 +401,6 @@ p {
   display: flex;
   justify-content: space-between;
   position: fixed;
-  bottom: 0;
   left: 0;
   right: 0;
   color: var(--white);
@@ -583,26 +582,39 @@ label {
 /** Kommandozeile
 **/ 
 #output {
-  padding: 1em;
   background: var(--black);
-  color: var(--green);
-  height: 100px;             /* feste Höhe */
+  color: var(--light-green);
   overflow: hidden;         /* kein Scrollen */
-}
-#prompt {
+  height: 5em;
+  bottom: 1.46em;
   position: fixed;
-  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+#output p {
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+#prompt {
   width: 100%;
   background: var(--black);
-  color: var(--green);
-  padding: 10px;
+  color: var(--light-green);
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+
 }
 #commandInput {
   width: 100%;
-  padding: 10px;
   font-size: 1em;
   border: none;
-  border-radius: 5px;
   background: var(--black);
-  color: var(--green);
+  color: var(--light-green);
+  cursor: none !important;
+  font-family: 'MorePerfectDOSVGA', monospace;  
 }
