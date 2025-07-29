@@ -11,16 +11,16 @@ const input = document.getElementById("commandInput");
 
         switch (command) {
           case "/menu":
-            newLine.textContent = "📂 Menü geöffnet";
+            newLine.textContent = "Menü geöffnet";
             break;
           case "/hilfe":
-            newLine.textContent = "❓ Hilfe angezeigt";
+            newLine.textContent = "Hilfe angezeigt";
             break;
           case "/zeit":
-            newLine.textContent = `🕒 Aktuelle Zeit: ${new Date().toLocaleTimeString()}`;
+            newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleTimeString()}`;
             break;
           default:
-            newLine.textContent = `⚠️ Unbekannter Befehl: ${command}`;
+            newLine.textContent = `Unbekannter Befehl: ${command}`;
         }
 
         output.appendChild(newLine);
