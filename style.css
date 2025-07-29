@@ -586,7 +586,7 @@ label {
   color: var(--light-green);
   overflow: hidden;         /* kein Scrollen */
   height: 5em;
-  bottom: 1.46em;
+  bottom: 1.3em;
   position: fixed;
   left: 0;
   right: 0;
