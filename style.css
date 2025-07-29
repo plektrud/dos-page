@@ -579,4 +579,26 @@ label {
   background: var(--green);
   color: var(--brown);
 }
-  
+
+/** Kommandozeile
+**/ 
+#output {
+  padding: 1em;
+  background: #f0f0f0;
+  height: 100px;             /* feste Höhe */
+  overflow: hidden;         /* kein Scrollen */
+}
+#inputContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #222;
+  padding: 10px;
+}
+#commandInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+}
