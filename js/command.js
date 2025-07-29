@@ -1,6 +1,6 @@
 const input = document.getElementById("commandInput");
     const output = document.getElementById("output");
-    const maxLines = 20; // maximale Anzahl sichtbarer Einträge
+    const maxLines = 5; // maximale Anzahl sichtbarer Einträge
 
     input.addEventListener("keydown", function(event) {
       if (event.key === "Enter") {
