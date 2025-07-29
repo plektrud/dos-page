@@ -1,6 +1,18 @@
 const input = document.getElementById("commandInput");
-    const output = document.getElementById("output");
-    const maxLines = 5; // maximale Anzahl sichtbarer Einträge
+const output = document.getElementById("output");
+const maxLines = 5; // maximale Anzahl sichtbarer Einträge
+
+// Fokus beim Laden
+window.addEventListener("load", () => input.focus());
+
+// Fokus zurückholen, wenn verloren
+input.addEventListener("blur", () => {
+  setTimeout(() => input.focus(), 0);
+});
+
+// Fokus bei Klick auf die Seite
+document.addEventListener("click", () => input.focus());
+
 
     input.addEventListener("keydown", function(event) {
       if (event.key === "Enter") {
