@@ -39,8 +39,7 @@ input.addEventListener("keydown", function(event) {
 
     const newLine = document.createElement("p");
 
-    switch (command) {
- // WOPR       
+    switch (command) {   
       case "login":
       if (commandParts.length > 1) {
         username = commandParts.slice(1).join(" ");
@@ -64,8 +63,19 @@ input.addEventListener("keydown", function(event) {
         newLine.textContent = "Fehler: Kein Benutzername angegeben.";
       }
       break;
-
-// ohne WOPR        
+      case "logout":
+        username = null;
+        status = false;
+        woprActive = false;
+        localStorage.removeItem("username");
+        localStorage.setItem("status", "false");
+        localStorage.removeItem("wopr");
+        // CSS zurücksetzen
+        output.classList.remove("wopr-mode");
+        maxLines = 5;
+        newLine.textContent = "Benutzer wurde abgemeldet.";
+      break;
+      
       case "cd":
         newLine.textContent = "Verzeichnis geöffnet";
         break;
@@ -89,29 +99,6 @@ input.addEventListener("keydown", function(event) {
         break;
       case "help":
         newLine.innerHTML = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME<br>weitere Zeilen";
-        break;
-      case "login":
-        if (commandParts.length > 1) {
-          username = commandParts.slice(1).join(" ");
-          status = true;
-          localStorage.setItem("username", username);
-          localStorage.setItem("status", "true");
-          newLine.textContent = `Benutzer "${username}" erfolgreich angemeldet.`;
-        } else {
-          newLine.textContent = "Fehler: Kein Benutzername angegeben.";
-        }
-        break;
-      case "logout":
-        username = null;
-        status = false;
-        woprActive = false;
-        localStorage.removeItem("username");
-        localStorage.setItem("status", "false");
-        localStorage.removeItem("wopr");
-        // CSS zurücksetzen
-        output.classList.remove("wopr-mode");
-        maxLines = 5;
-        newLine.textContent = "Benutzer wurde abgemeldet.";
         break;
       case "status":
         newLine.textContent = status
