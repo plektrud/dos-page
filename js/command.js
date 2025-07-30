@@ -53,7 +53,7 @@ input.addEventListener("keydown", function(event) {
 
 function getWelcomeMessage(username) {
   if (username.toUpperCase() === "FALKEN") {
-    return "Willkommen zurück, Professor Falken. Möchten Sie ein Spiel spielen?";
+    return "Greetings Professor Falken. <br>Shall we play a game?";
   } else {
     return `Hallo ${username}, Sie sind jetzt eingeloggt.`;
   }
@@ -81,7 +81,7 @@ function getWelcomeMessage(username) {
             promptSpan.style.display = "none";
           }
         }    
-        newLine.textContent = getWelcomeMessage(username);
+        newLine.innerHTML = getWelcomeMessage(username);
       } else {
         newLine.textContent = "Fehler: Kein Benutzername angegeben.";
       }
