@@ -618,7 +618,7 @@ label {
 
 #output.wopr-mode {
   height: 46.7em;
-  color: var(--brown);
+  color: var(--light-cyan);
   text-transform: uppercase;
   align-content: baseline;
 }
@@ -647,7 +647,7 @@ label {
 }
 
 #commandInput.wopr-mode {
-  color: var(--brown);
+  color: var(--light-cyan);
 }
 
 #prompt .fake-cursor {
