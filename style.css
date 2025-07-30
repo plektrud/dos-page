@@ -646,6 +646,10 @@ label {
   flex: 1;
 }
 
+#commandInput.wopr-mode {
+  color: var(--brown);
+}
+
 #prompt .fake-cursor {
   position: relative;
   top: 4px;
