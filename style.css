@@ -618,6 +618,8 @@ label {
 
 #output.wopr-mode {
   height: 46.7em;
+  color: var(--brown);
+  text-transform: uppercase;
 }
 
 #prompt {
