@@ -7,6 +7,8 @@ const maxLines = 5;
 // Initiale Variablen
 let username = localStorage.getItem("username") || null;
 let status = localStorage.getItem("status") === "true";
+let woprActive = localStorage.getItem("wopr") === "true";
+let maxLines = woprActive ? 46 : 5;
 
 // HTML beim Laden aktualisieren
 if (usernameDisplay && username) {
@@ -38,6 +40,32 @@ input.addEventListener("keydown", function(event) {
     const newLine = document.createElement("p");
 
     switch (command) {
+ // WOPR       
+      case "login":
+      if (commandParts.length > 1) {
+        username = commandParts.slice(1).join(" ");
+        status = true;
+        localStorage.setItem("username", username);
+        localStorage.setItem("status", "true");
+    
+        // WOPR aktivieren, wenn Benutzer "FALKEN"
+        if (username.toUpperCase() === "FALKEN") {
+          woprActive = true;
+          localStorage.setItem("wopr", "true");
+    
+          // Zeilen erhöhen
+          maxLines = 46;
+    
+          // CSS anpassen (z. B. Hintergrundfarbe ändern)
+          output.classList.add("wopr-mode");
+        }    
+        newLine.textContent = `Benutzer "${username}" erfolgreich angemeldet.`;
+      } else {
+        newLine.textContent = "Fehler: Kein Benutzername angegeben.";
+      }
+      break;
+
+// ohne WOPR        
       case "cd":
         newLine.textContent = "Verzeichnis geöffnet";
         break;
@@ -76,8 +104,13 @@ input.addEventListener("keydown", function(event) {
       case "logout":
         username = null;
         status = false;
+        woprActive = false;
         localStorage.removeItem("username");
         localStorage.setItem("status", "false");
+        localStorage.removeItem("wopr");
+        // CSS zurücksetzen
+        output.classList.remove("wopr-mode");
+        maxLines = 5;
         newLine.textContent = "Benutzer wurde abgemeldet.";
         break;
       case "status":
