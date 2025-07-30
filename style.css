@@ -620,6 +620,7 @@ label {
   height: 46.7em;
   color: var(--brown);
   text-transform: uppercase;
+  align-content: baseline;
 }
 
 #prompt {
