@@ -40,6 +40,14 @@ input.addEventListener("keydown", function(event) {
       case "CD":
         newLine.textContent = "Verzeichnis geöffnet";
         break;
+      case "EXIT":
+        const link = document.getElementById("esc-link");
+        if (link) {
+          link.click(); // Simuliert Klick auf den Link
+        } else {
+          newLine.textContent = "Terminal kann nicht aufgerufen werden.";
+        }
+        break;
       case "HELP":
         newLine.textContent = "Mögliche Befehle";
         newLine.textContent = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME     ";
