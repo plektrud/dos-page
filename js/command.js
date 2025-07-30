@@ -41,6 +41,9 @@ input.addEventListener("keydown", function(event) {
       case "cd":
         newLine.textContent = "Verzeichnis geöffnet";
         break;
+      case "clear":
+        newLine.textContent = "\n"+"\n"+"\n"+"\n"+"\n";
+        break;
       case "date":
         const day = now.getDate();       // Gibt z. B. 1 statt 01 zurück
         const month = now.getMonth() + 1; // Gibt z. B. 7 statt 07 zurück
@@ -60,8 +63,6 @@ input.addEventListener("keydown", function(event) {
         newLine.textContent = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME\n"
           + "weitere Hilfe...";
         break;
-
-
       case "login":
         if (commandParts.length > 1) {
           username = commandParts.slice(1).join(" ");
