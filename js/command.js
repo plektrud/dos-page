@@ -85,7 +85,7 @@ input.addEventListener("keydown", function(event) {
           : "Nicht eingeloggt.";
         break;
       case "time":
-        newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleTimeString()}`;
+        newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleTimeString('de-DE', { hour: 'numeric', minute: '2-digit', second: '2-digit'})}`;
         break;  
       default:
         newLine.textContent = `Unbekannter Befehl: ${commandRaw}`;
