@@ -49,11 +49,7 @@ input.addEventListener("keydown", function(event) {
         }
         break;
       case "HELP":
-        newLine.textContent = "Mögliche Befehle";
         newLine.textContent = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME     ";
-        newLine.textContent = "Hilfe 3";
-        newLine.textContent = "Hilfe 4";
-        newLine.textContent = "Hilfe 5";
         break;
       case "TIME":
         newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleTimeString()}`;
