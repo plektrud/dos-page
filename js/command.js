@@ -29,6 +29,7 @@ document.addEventListener("click", () => input.focus());
 
 input.addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
+    const now = new Date(); 
     const commandRaw = input.value.trim();
     const commandParts = commandRaw.split(" ");
     const command = commandParts[0].toLowerCase();
