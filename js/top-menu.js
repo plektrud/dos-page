@@ -16,5 +16,6 @@ document.querySelectorAll('.top-menu a').forEach(link => {
 
 document.getElementById('esc-link').addEventListener('click', () => {
   localStorage.removeItem('username');
+  localStorage.removeItem('status');
   // Link wird normal ausgeführt – kein preventDefault!
 });
