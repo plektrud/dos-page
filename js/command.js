@@ -41,7 +41,11 @@ input.addEventListener("keydown", function(event) {
         newLine.textContent = "Verzeichnis geöffnet";
         break;
       case "date":
-        newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleDateString()}`;
+        const day = now.getDate();       // Gibt z. B. 1 statt 01 zurück
+        const month = now.getMonth() + 1; // Gibt z. B. 7 statt 07 zurück
+        const year = now.getFullYear();
+        const date = `${day}.${month}.${year}`;
+        newLine.textContent = `Aktuelles Datum: ${date}`;
       break;
       case "exit":
         const link = document.getElementById("esc-link");
