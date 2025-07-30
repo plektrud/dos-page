@@ -52,9 +52,9 @@ input.addEventListener("keydown", function(event) {
           status = true;
           localStorage.setItem("username", username);
           localStorage.setItem("status", "true");
-          newLine.textContent = `✅ Benutzer "${username}" erfolgreich angemeldet.`;
+          newLine.textContent = `Benutzer "${username}" erfolgreich angemeldet.`;
         } else {
-          newLine.textContent = "⚠️ Fehler: Kein Benutzername angegeben.";
+          newLine.textContent = "Fehler: Kein Benutzername angegeben.";
         }
         break;
       case "/logout":
@@ -62,12 +62,12 @@ input.addEventListener("keydown", function(event) {
         status = false;
         localStorage.removeItem("username");
         localStorage.setItem("status", "false");
-        newLine.textContent = "🚪 Benutzer wurde abgemeldet.";
+        newLine.textContent = "Benutzer wurde abgemeldet.";
         break;
       case "/status":
         newLine.textContent = status
-          ? `🔒 Eingeloggt als: ${username}`
-          : "🔓 Nicht eingeloggt.";
+          ? `Eingeloggt als: ${username}`
+          : "Nicht eingeloggt.";
         break;
       default:
         newLine.textContent = `Unbekannter Befehl: ${commandRaw}`;
@@ -77,10 +77,10 @@ input.addEventListener("keydown", function(event) {
 
     // HTML aktualisieren
     if (usernameDisplay) {
-      usernameDisplay.textContent = username ? `Angemeldet als: ${username}` : "Nicht angemeldet";
+      usernameDisplay.textContent = username ? `${username}` : "";
     }
     if (statusDisplay) {
-      statusDisplay.textContent = `Login-Status: ${status ? "eingeloggt" : "nicht eingeloggt"}`;
+      statusDisplay.textContent = `${status ? "eingeloggt" : "nicht eingeloggt"}`;
     }
 
     while (output.children.length > maxLines) {
@@ -93,7 +93,7 @@ input.addEventListener("keydown", function(event) {
 document.addEventListener("keydown", function(event) {
   if (event.altKey && event.key.toLowerCase() === "m") {
     const newLine = document.createElement("p");
-    newLine.textContent = "🔧 Menü über Tastenkürzel geöffnet";
+    newLine.textContent = "Menü über Tastenkürzel geöffnet";
     output.appendChild(newLine);
 
     while (output.children.length > maxLines) {
