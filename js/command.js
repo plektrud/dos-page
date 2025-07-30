@@ -37,16 +37,23 @@ input.addEventListener("keydown", function(event) {
     const newLine = document.createElement("p");
 
     switch (command) {
-      case "/menu":
-        newLine.textContent = "Menü geöffnet";
+      case "CD":
+        newLine.textContent = "Verzeichnis geöffnet";
         break;
-      case "/hilfe":
-        newLine.textContent = "Hilfe angezeigt";
+      case "HELP":
+        newLine.textContent = "Mögliche Befehle";
+        newLine.textContent = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME     ";
+        newLine.textContent = "Hilfe 3";
+        newLine.textContent = "Hilfe 4";
+        newLine.textContent = "Hilfe 5";
         break;
-      case "/zeit":
+      case "TIME":
         newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleTimeString()}`;
         break;
-      case "/login":
+      case "DATE":
+        newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleTimeString()}`;
+        break;
+      case "LOGIN":
         if (commandParts.length > 1) {
           username = commandParts.slice(1).join(" ");
           status = true;
@@ -57,14 +64,14 @@ input.addEventListener("keydown", function(event) {
           newLine.textContent = "Fehler: Kein Benutzername angegeben.";
         }
         break;
-      case "/logout":
+      case "LOGOUT":
         username = null;
         status = false;
         localStorage.removeItem("username");
         localStorage.setItem("status", "false");
         newLine.textContent = "Benutzer wurde abgemeldet.";
         break;
-      case "/status":
+      case "STATUS":
         newLine.textContent = status
           ? `Eingeloggt als: ${username}`
           : "Nicht eingeloggt.";
