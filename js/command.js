@@ -106,7 +106,7 @@ function getWelcomeMessage(username) {
         newLine.textContent = "Verzeichnis geöffnet";
         break;
       case "clear":
-        newLine.innerHTML = "<br><br><br><br><br>";
+        output.innerHTML = "";
         break;
       case "date":
         const day = now.getDate();       // Gibt z. B. 1 statt 01 zurück
