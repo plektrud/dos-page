@@ -10,10 +10,10 @@ let status = localStorage.getItem("status") === "true";
 
 // HTML beim Laden aktualisieren
 if (usernameDisplay && username) {
-  usernameDisplay.textContent = `Angemeldet als: ${username}`;
+  usernameDisplay.textContent = `${username}`;
 }
 if (statusDisplay) {
-  statusDisplay.textContent = `Login-Status: ${status ? "eingeloggt" : "nicht eingeloggt"}`;
+  statusDisplay.textContent = `${status ? "eingeloggt" : "nicht eingeloggt"}`;
 }
 
 // Fokus beim Laden
