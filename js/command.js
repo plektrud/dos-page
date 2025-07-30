@@ -42,7 +42,7 @@ input.addEventListener("keydown", function(event) {
         newLine.textContent = "Verzeichnis geöffnet";
         break;
       case "clear":
-        newLine.textContent = "\n"+"\n"+"\n"+"\n"+"\n";
+        newLine.innerHTML = "<br><br><br><br><br>";
         break;
       case "date":
         const day = now.getDate();       // Gibt z. B. 1 statt 01 zurück
