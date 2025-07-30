@@ -478,6 +478,21 @@ a {
   margin-bottom: 50px;
   margin-left: auto;
   cursor: none !important;
+
+  /**CRT Effekt**/
+  position: relative;
+  overflow: hidden;
+
+}
+  /**CRT Effekt**/
+.window-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0) 50%, rgba(0,0,0,0.15) 50%);
+  background-size: 100% 2px;
+  pointer-events: none;
+  z-index: 10;
 }
 
 .main-frame {
