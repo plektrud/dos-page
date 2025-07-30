@@ -40,6 +40,9 @@ input.addEventListener("keydown", function(event) {
       case "cd":
         newLine.textContent = "Verzeichnis geöffnet";
         break;
+      case "date":
+        newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleDateString()}`;
+      break;
       case "exit":
         const link = document.getElementById("esc-link");
         if (link) {
@@ -49,15 +52,11 @@ input.addEventListener("keydown", function(event) {
         }
         break;
       case "help":
-        newLine.textContent = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME     ";
-        newLine.textContent = "weitere Hilfe...";
+        newLine.textContent = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME\n"
+          + "weitere Hilfe...";
         break;
-      case "time":
-        newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleTimeString()}`;
-        break;
-      case "date":
-        newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleDateString()}`;
-        break;
+
+
       case "login":
         if (commandParts.length > 1) {
           username = commandParts.slice(1).join(" ");
@@ -81,6 +80,9 @@ input.addEventListener("keydown", function(event) {
           ? `Eingeloggt als: ${username}`
           : "Nicht eingeloggt.";
         break;
+      case "time":
+        newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleTimeString()}`;
+        break;  
       default:
         newLine.textContent = `Unbekannter Befehl: ${commandRaw}`;
     }
