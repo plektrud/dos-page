@@ -2,7 +2,6 @@ const input = document.getElementById("commandInput");
 const output = document.getElementById("output");
 const usernameDisplay = document.getElementById("usernameDisplay");
 const statusDisplay = document.getElementById("statusDisplay");
-const maxLines = 5;
 
 // Initiale Variablen
 let username = localStorage.getItem("username") || null;
@@ -39,6 +38,14 @@ input.addEventListener("keydown", function(event) {
 
     const newLine = document.createElement("p");
 
+function getWelcomeMessage(username) {
+  if (username.toUpperCase() === "FALKEN") {
+    return "Willkommen zurück, Professor Falken. Möchten Sie ein Spiel spielen?";
+  } else {
+    return `Hallo ${username}, Sie sind jetzt eingeloggt.`;
+  }
+}
+    
     switch (command) {   
       case "login":
       if (commandParts.length > 1) {
@@ -58,7 +65,7 @@ input.addEventListener("keydown", function(event) {
           // CSS anpassen (z. B. Hintergrundfarbe ändern)
           output.classList.add("wopr-mode");
         }    
-        newLine.textContent = `Benutzer "${username}" erfolgreich angemeldet.`;
+        newLine.textContent = getWelcomeMessage(username);
       } else {
         newLine.textContent = "Fehler: Kein Benutzername angegeben.";
       }
@@ -98,7 +105,11 @@ input.addEventListener("keydown", function(event) {
         }
         break;
       case "help":
-        newLine.innerHTML = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME<br>weitere Zeilen";
+        if (woprActive) {
+          newLine.innerHTML = "WOPR-Systembefehle:<br>ANALYZE     SIMULATE     DEFCON     LOGOUT";
+        } else {
+          newLine.innerHTML = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME<br>weitere Zeilen";
+        }
         break;
       case "status":
         newLine.textContent = status
