@@ -1,4 +1,5 @@
 const input = document.getElementById("commandInput");
+const promptSpan = document.querySelector("#prompt span");
 const output = document.getElementById("output");
 const usernameDisplay = document.getElementById("usernameDisplay");
 const statusDisplay = document.getElementById("statusDisplay");
@@ -8,6 +9,18 @@ let username = localStorage.getItem("username") || null;
 let status = localStorage.getItem("status") === "true";
 let woprActive = localStorage.getItem("wopr") === "true";
 let maxLines = woprActive ? 46 : 5;
+
+if (woprActive) {
+  output.classList.add("wopr-mode");
+
+  // Falls du den Prompt-Span ausblenden willst:
+  if (promptSpan) {
+    promptSpan.style.display = "none";
+  }
+
+  // Zeilenanzahl aktualisieren
+  maxLines = 46;
+}
 
 // HTML beim Laden aktualisieren
 if (usernameDisplay && username) {
@@ -64,6 +77,9 @@ function getWelcomeMessage(username) {
     
           // CSS anpassen (z. B. Hintergrundfarbe ändern)
           output.classList.add("wopr-mode");
+          if (promptSpan) {
+            promptSpan.style.display = "none";
+          }
         }    
         newLine.textContent = getWelcomeMessage(username);
       } else {
@@ -79,6 +95,9 @@ function getWelcomeMessage(username) {
         localStorage.removeItem("wopr");
         // CSS zurücksetzen
         output.classList.remove("wopr-mode");
+        if (promptSpan) {
+          promptSpan.style.display = "";
+        }
         maxLines = 5;
         newLine.textContent = "Benutzer wurde abgemeldet.";
       break;
