@@ -60,8 +60,7 @@ input.addEventListener("keydown", function(event) {
         }
         break;
       case "help":
-        newLine.textContent = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME\n"
-          + "weitere Hilfe...";
+        newLine.innerHTML = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME<br>weitere Zeilen";
         break;
       case "login":
         if (commandParts.length > 1) {
