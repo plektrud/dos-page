@@ -607,6 +607,7 @@ label {
   right: 0;
   z-index: 100;
   align-content: end;
+  white-space: pre;
 }
 
 #output p {
