@@ -616,6 +616,10 @@ label {
   margin: 0;
 }
 
+#output.wopr-mode {
+  height: 46.7em;
+}
+
 #prompt {
   width: 100%;
   background: var(--black);
