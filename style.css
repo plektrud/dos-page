@@ -608,6 +608,8 @@ label {
   position: fixed;
   left: 0;
   right: 0;
+  display: flex;
+  align-items: center;
 
 }
 #commandInput {
@@ -618,6 +620,7 @@ label {
   color: var(--light-green);
   cursor: none !important;
   font-family: 'MorePerfectDOSVGA', monospace;  
+  flex: 1;
 }
 
 #prompt .fake-cursor {
@@ -630,4 +633,9 @@ label {
   left: -557px;
   top: 0px;
   visibility: visible;
+}
+
+
+#prompt span {
+  margin-right: 5px;
 }
