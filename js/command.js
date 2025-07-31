@@ -1,3 +1,5 @@
+import { tttHandle } from "./games/tictactoe.js";
+
 const input = document.getElementById("commandInput");
 const promptSpan = document.querySelector("#prompt span");
 const output = document.getElementById("output");
@@ -145,6 +147,12 @@ function runLogout() {
         break;
       case "time":
         newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleTimeString('de-DE', { hour: 'numeric', minute: '2-digit', second: '2-digit'})}`;
+        break;
+      case "ttt":
+      case "ttt-start":
+      case "ttt-exit":
+      case "ttt-help":
+        tttHandle(commandParts, output, woprActive);
         break;  
       default:
         newLine.textContent = `Unbekannter Befehl: ${commandRaw}`;
