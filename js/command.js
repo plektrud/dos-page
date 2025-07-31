@@ -12,6 +12,7 @@ let maxLines = woprActive ? 46 : 5;
 
 if (woprActive) {
   output.classList.add("wopr-mode");
+  commandInput.classList.add("wopr-mode");
 
   // Falls du den Prompt-Span ausblenden willst:
   if (promptSpan) {
@@ -76,7 +77,8 @@ function getWelcomeMessage(username) {
           maxLines = 46;
     
           // CSS anpassen (z. B. Hintergrundfarbe ändern)
-          output.classList.add("wopr-mode");
+          output.classList.add("wopr-mode");,
+          commandInput.classList.add("wopr-mode");
           if (promptSpan) {
             promptSpan.style.display = "none";
           }
