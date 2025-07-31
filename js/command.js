@@ -1,4 +1,5 @@
 import { tttHandle } from "./games/tictactoe.js";
+import { snakeHandle } from "./games/snake.js";
 
 const input = document.getElementById("commandInput");
 const promptSpan = document.querySelector("#prompt span");
@@ -185,6 +186,16 @@ function getAllowedCommands() {
           gameState.status = state.status;
         });
         break;
+      case "snake":
+      case "snake-start":
+      case "snake-exit":
+      case "snake-help":
+        snakeHandle(commandParts, output, woprActive, (state) => {
+          gameState.active = state.active;
+          gameState.status = state.status;
+        });
+        break;
+  
       default:
         newLine.textContent = `Unbekannter Befehl: ${commandRaw}`;
     }
