@@ -45,6 +45,23 @@ input.addEventListener("blur", () => {
 // Fokus bei Klick auf die Seite
 document.addEventListener("click", () => input.focus());
 
+// neue Textzeilen generieren
+function addTextLines(text) {
+  const normalized = text.replace(/<br\s*\/?>/gi, "\n");
+  const lines = normalized.split("\n");
+  lines.forEach(line => {
+    if (line.trim() !== "") {
+      const p = document.createElement("p");
+      p.textContent = line.trim();
+      output.appendChild(p);
+    }
+  });
+  while (output.children.length > maxLines) {
+    output.removeChild(output.firstChild);
+  }
+}
+
+
 input.addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
     const now = new Date(); 
@@ -105,7 +122,7 @@ function runLogout() {
         }   
         newLine.innerHTML = getWelcomeMessage(username);
       } else {
-        newLine.textContent = "Fehler: Kein Benutzername angegeben.";
+        addTextLines('Fehler: Kein Benutzername angegeben.');
       }
       break;
       case "logout":
@@ -113,7 +130,7 @@ function runLogout() {
       break;
       
       case "cd":
-        newLine.textContent = "Verzeichnis geöffnet";
+        addTextLines('Verzeichnis geöffnet');
         break;
       case "clear":
         output.innerHTML = "";
@@ -123,21 +140,21 @@ function runLogout() {
         const month = now.getMonth() + 1; // Gibt z. B. 7 statt 07 zurück
         const year = now.getFullYear();
         const date = `${day}.${month}.${year}`;
-        newLine.textContent = `Aktuelles Datum: ${date}`;
+        addTextLines('Aktuelles Datum: ${date}`);
       break;
       case "exit":
         const link = document.getElementById("esc-link");
         if (link) {
           link.click(); // Simuliert Klick auf den Link
         } else {
-          newLine.textContent = "Terminal kann nicht aufgerufen werden.";
+          addTextLines('Terminal kann nicht aufgerufen werden.');
         }
         break;
       case "help":
         if (woprActive) {
-          newLine.innerHTML = "WOPR SYSTEM COMMANDS:<br>ANALYZE     DEFCON     GAMES     SIMULATE     LOGOUT";
+          addTextLines('WOPR SYSTEM COMMANDS:<br>ANALYZE     DEFCON     GAMES     SIMULATE     LOGOUT');
         } else {
-          newLine.innerHTML = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME<br>weitere Zeilen";
+          addTextLines('CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME<br>weitere Zeilen');
         }
         break;
       case "status":
@@ -146,7 +163,7 @@ function runLogout() {
           : "Nicht eingeloggt.";
         break;
       case "time":
-        newLine.textContent = `Aktuelle Zeit: ${new Date().toLocaleTimeString('de-DE', { hour: 'numeric', minute: '2-digit', second: '2-digit'})}`;
+        addTextLines('Aktuelle Zeit: ${new Date().toLocaleTimeString('de-DE', { hour: 'numeric', minute: '2-digit', second: '2-digit'})}');
         break;
       case "ttt":
       case "ttt-start":
@@ -155,7 +172,7 @@ function runLogout() {
         tttHandle(commandParts, output, woprActive);
         break;  
       default:
-        newLine.textContent = `Unbekannter Befehl: ${commandRaw}`;
+        addTextLines('Unbekannter Befehl: ${commandRaw}');
     }
 
     output.appendChild(newLine);
@@ -174,15 +191,3 @@ function runLogout() {
   }
 });
 
-// Tastenkürzel: Alt + M öffnet Menüeintrag
-document.addEventListener("keydown", function(event) {
-  if (event.altKey && event.key.toLowerCase() === "m") {
-    const newLine = document.createElement("p");
-    newLine.textContent = "Menü über Tastenkürzel geöffnet";
-    output.appendChild(newLine);
-
-    while (output.children.length > maxLines) {
-      output.removeChild(output.firstChild);
-    }
-  }
-});
