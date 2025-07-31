@@ -60,10 +60,31 @@ function getWelcomeMessage(username) {
     return `Hallo ${username}, Sie sind jetzt eingeloggt.`;
   }
 }
+
+function runLogout() {
+  username = null;
+  status = false;
+  woprActive = false;
+  localStorage.removeItem("username");
+  localStorage.setItem("status", "false");
+  localStorage.removeItem("wopr");
+  output.classList.remove("wopr-mode");
+  commandInput.classList.remove("wopr-mode");
+  if (promptSpan) {
+    promptSpan.style.display = "";
+  }
+  maxLines = 5;
+  output.innerHTML = "";
+
+  const logoutLine = document.createElement("p");
+  logoutLine.textContent = "Vorheriger Benutzer wurde automatisch abgemeldet.";
+  output.appendChild(logoutLine);
+}    
     
     switch (command) {   
       case "login":
       if (commandParts.length > 1) {
+        runLogout();
         username = commandParts.slice(1).join(" ");
         status = true;
         localStorage.setItem("username", username);
@@ -83,28 +104,14 @@ function getWelcomeMessage(username) {
           if (promptSpan) {
             promptSpan.style.display = "none";
           }
-        }    
+        }   
         newLine.innerHTML = getWelcomeMessage(username);
       } else {
         newLine.textContent = "Fehler: Kein Benutzername angegeben.";
       }
       break;
       case "logout":
-        username = null;
-        status = false;
-        woprActive = false;
-        localStorage.removeItem("username");
-        localStorage.setItem("status", "false");
-        localStorage.removeItem("wopr");
-        // CSS zurücksetzen
-        output.classList.remove("wopr-mode");
-        commandInput.classList.remove("wopr-mode");
-        if (promptSpan) {
-          promptSpan.style.display = "";
-        }
-        maxLines = 5;
-        output.innerHTML = "";
-        newLine.textContent = "Benutzer wurde abgemeldet.";
+        runLogout();
       break;
       
       case "cd":
