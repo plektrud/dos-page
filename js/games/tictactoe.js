@@ -101,7 +101,7 @@ export function tttHandle(commandParts, output, woprActive, setGameState) {
       }
       tttBoard[pos] = "X";
       if (checkWin("X")) {
-        response.textContent = "You won!";
+        response.textContent = "You won!\nShall we play another game?";
         currentGameState = { active: null, status: "ended" };
         setGameState(currentGameState);
         renderBoard(output);
@@ -109,7 +109,7 @@ export function tttHandle(commandParts, output, woprActive, setGameState) {
       }
       computerMove();
       if (checkWin("O")) {
-        response.textContent = "Joshua won!";
+        response.textContent = "Joshua won!\nWould you like to play again?";
         currentGameState = { active: null, status: "ended" };
         setGameState(currentGameState);
         renderBoard(output);
