@@ -69,6 +69,8 @@ function getWelcomeMessage(username) {
 
 function runLogout() {
   username = null;
+  gameState.active = null;
+  gameState.status = "idle";
   status = false;
   woprActive = false;
   localStorage.removeItem("username");
@@ -83,20 +85,31 @@ function runLogout() {
   output.innerHTML = "";
 }    
 
-const allowedGameCommands = {
-  ttt: ["ttt", "ttt-start", "ttt-exit", "ttt-help", "help", "logout"],
-};
-if (
-  gameState.status === "playing" &&
-  gameState.active &&
-  !allowedGameCommands[gameState.active].includes(command)
-) {
+function getAllowedCommands() {
+  let commands = ["login", "logout", "cd", "clear", "date", "exit", "help", "status", "time"];
+
+  if (woprActive) {
+    commands.push("analyze", "defcon", "games", "simulate");
+  }
+  if (gameState.active && allowedGameCommands[gameState.active]) {
+    commands = commands.concat(allowedGameCommands[gameState.active]);
+  }
+  return commands;
+}
+
+if (!getAllowedCommands().includes(command)) {
   const warning = document.createElement("p");
-  warning.textContent = `Unknown Command. Use Help or Logout.`;
+  warning.textContent = `Unbekannter Befehl: ${commandRaw}`;
   output.appendChild(warning);
   return;
 }
 
+const allowedGameCommands = {
+  ttt: ["ttt", "ttt-start", "ttt-exit", "ttt-help"],
+  snake: ["snake", "snake-start", "snake-exit", "snake-help"],
+  quiz: ["quiz", "quiz-start", "quiz-exit", "quiz-help"]
+};
+    
     
     switch (command) {   
       case "login":
