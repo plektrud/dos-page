@@ -1,7 +1,5 @@
 // games/tictactoe.js
 
-import { addTextLines } from "../command.js"; // optionaler Import
-
 let tttBoard = Array(9).fill(null);
 let tttGameActive = false;
 
@@ -32,7 +30,7 @@ function renderBoard(output) {
   `;
   const line = document.createElement("p");
   line.innerHTML = `<pre>${layout}</pre>`;
-  addTextLines(layout);
+  output.appendChild(line);
 }
 
 export function tttHandle(commandParts, output, woprActive) {
@@ -50,54 +48,54 @@ export function tttHandle(commandParts, output, woprActive) {
     case "ttt-start":
       tttBoard = Array(9).fill(null);
       tttGameActive = true;
-      addTextLines("Tic-Tac-Toe started. You play as X (0–8).");
+      response.textContent = "Tic-Tac-Toe started. You play as X (0–8).";
       break;
 
     case "ttt":
       if (!tttGameActive) {
-        addTextLines("Spiel nicht gestartet. Nutze 'ttt-start'.");
+        response.textContent = "Spiel nicht gestartet. Nutze 'ttt-start'.";
         break;
       }
       const pos = parseInt(arg);
       if (isNaN(pos) || pos < 0 || pos > 8 || tttBoard[pos]) {
-        addTextLines("Invalid move.");
+        response.textContent = "Invalid move.";
         break;
       }
       tttBoard[pos] = "X";
       if (checkWin("X")) {
-        addTextLines("You won!");
+        response.textContent = "You won!";
         renderBoard(output);
         tttGameActive = false;
         break;
       }
       computerMove();
       if (checkWin("O")) {
-        addTextLines("Joshua won!");
+        response.textContent = "Joshua won!";
         renderBoard(output);
         tttGameActive = false;
         break;
       }
       if (tttBoard.every(cell => cell)) {
-        addTextLines("Draw!");
+        response.textContent = "Draw!";
         renderBoard(output);
         tttGameActive = false;
         break;
       }
-      addTextLines("Move executed.");
+      response.textContent = "Move executed.";
       break;
 
     case "ttt-exit":
       tttBoard = Array(9).fill(null);
       tttGameActive = false;
-      addTextLines("Game over!");
+      response.textContent = "Game over!";
       break;
 
     case "ttt-help":
-      addTextLines("Tic-Tac-Toe Commands:<br>ttt-start – New Game<br>ttt [0-8] – Move<br>ttt-exit – Quit Game");
+      response.innerHTML = "Tic-Tac-Toe Commands:<br>ttt-start – New Game<br>ttt [0-8] – Move<br>ttt-exit – Quit Game";
       break;
 
     default:
-      addTextLines("Unknown Command: ${commandParts.join(" ")}");
+      response.textContent = `Unknown Command: ${commandParts.join(" ")}`;
   }
 
   output.appendChild(response);
