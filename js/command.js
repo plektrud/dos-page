@@ -75,10 +75,6 @@ function runLogout() {
   }
   maxLines = 5;
   output.innerHTML = "";
-
-  const logoutLine = document.createElement("p");
-  logoutLine.textContent = "Vorheriger Benutzer wurde automatisch abgemeldet.";
-  output.appendChild(logoutLine);
 }    
     
     switch (command) {   
