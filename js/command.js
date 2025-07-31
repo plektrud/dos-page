@@ -85,31 +85,24 @@ function runLogout() {
   output.innerHTML = "";
 }    
 
-function getAllowedCommands() {
-  let commands = ["login", "logout", "cd", "clear", "date", "exit", "help", "status", "time"];
-
-  if (woprActive) {
-    commands.push("analyze", "defcon", "games", "simulate");
-  }
-  if (gameState.active && allowedGameCommands[gameState.active]) {
-    commands = commands.concat(allowedGameCommands[gameState.active]);
-  }
-  return commands;
-}
-
-if (!getAllowedCommands().includes(command)) {
-  const warning = document.createElement("p");
-  warning.textContent = `Unbekannter Befehl: ${commandRaw}`;
-  output.appendChild(warning);
-  return;
-}
-
+const systemCommands = ["login", "logout", "cd", "clear", "date", "exit", "help", "status", "time"];
+const woprCommands = ["analyze", "defcon", "games", "simulate"];
 const allowedGameCommands = {
   ttt: ["ttt", "ttt-start", "ttt-exit", "ttt-help"],
   snake: ["snake", "snake-start", "snake-exit", "snake-help"],
   quiz: ["quiz", "quiz-start", "quiz-exit", "quiz-help"]
 };
     
+function getAllowedCommands() {
+  let commands = [...systemCommands];
+  if (woprActive) {
+    commands = commands.concat(woprCommands);
+  }
+  if (gameState.active && allowedGameCommands[gameState.active]) {
+    commands = commands.concat(allowedGameCommands[gameState.active]);
+  }
+  return commands;
+}
     
     switch (command) {   
       case "login":
@@ -166,19 +159,14 @@ const allowedGameCommands = {
         }
         break;
       case "help":
-        if (gameState.active === "ttt") {
-          // Simuliere den Aufruf von "ttt-help"
-          tttHandle(["ttt-help"], output, woprActive, (state) => {
-            gameState.active = state.active;
-            gameState.status = state.status;
-          });
-        } else if (woprActive) {
-          newLine.innerHTML = "WOPR SYSTEM COMMANDS:<br>ANALYZE     DEFCON     GAMES     SIMULATE     LOGOUT";
-          output.appendChild(newLine);
-        } else {
-          newLine.innerHTML = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME<br>weitere Zeilen";
-          output.appendChild(newLine);
+        newLine.innerHTML = `<strong>System Commands:</strong><br>${systemCommands.join("   ")}`;
+        if (woprActive) {
+          newLine.innerHTML += `<br><strong>WOPR Commands:</strong><br>${woprCommands.join("   ")}`;
         }
+        if (gameState.active && allowedGameCommands[gameState.active]) {
+          newLine.innerHTML += `<br><strong>Game Commands (${gameState.active}):</strong><br>${allowedGameCommands[gameState.active].join("   ")}`;
+        }
+        output.appendChild(newLine);
         break;
       case "status":
         newLine.textContent = status
