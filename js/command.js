@@ -84,7 +84,7 @@ function runLogout() {
 }    
 
 const allowedGameCommands = {
-  ttt: ["ttt", "ttt-start", "ttt-exit", "ttt-help", "logout"],
+  ttt: ["ttt", "ttt-start", "ttt-exit", "ttt-help", "help", "logout"],
 };
 if (
   gameState.status === "playing" &&
@@ -92,7 +92,7 @@ if (
   !allowedGameCommands[gameState.active].includes(command)
 ) {
   const warning = document.createElement("p");
-  warning.textContent = `Nur Spielbefehle erlaubt während ${gameState.active}. Nutze '${gameState.active}-exit' zum Beenden.`;
+  warning.textContent = `Unknown Command. Use Help or Logout.`;
   output.appendChild(warning);
   return;
 }
@@ -153,10 +153,18 @@ if (
         }
         break;
       case "help":
-        if (woprActive) {
+        if (gameState.active === "ttt") {
+          // Simuliere den Aufruf von "ttt-help"
+          tttHandle(["ttt-help"], output, woprActive, (state) => {
+            gameState.active = state.active;
+            gameState.status = state.status;
+          });
+        } else if (woprActive) {
           newLine.innerHTML = "WOPR SYSTEM COMMANDS:<br>ANALYZE     DEFCON     GAMES     SIMULATE     LOGOUT";
+          output.appendChild(newLine);
         } else {
           newLine.innerHTML = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME<br>weitere Zeilen";
+          output.appendChild(newLine);
         }
         break;
       case "status":
