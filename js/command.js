@@ -6,6 +6,10 @@ const output = document.getElementById("output");
 const commandInput = document.getElementById("commandInput");
 const usernameDisplay = document.getElementById("usernameDisplay");
 const statusDisplay = document.getElementById("statusDisplay");
+const gameState = {
+  active: null,   // z. B. "ttt", "snake", ...
+  status: "idle", // "idle", "playing", "paused", "ended"
+};
 
 // Initiale Variablen
 let username = localStorage.getItem("username") || null;
@@ -78,6 +82,21 @@ function runLogout() {
   maxLines = 5;
   output.innerHTML = "";
 }    
+
+const allowedGameCommands = {
+  ttt: ["ttt", "ttt-start", "ttt-exit", "ttt-help", "logout"],
+};
+if (
+  gameState.status === "playing" &&
+  gameState.active &&
+  !allowedGameCommands[gameState.active].includes(command)
+) {
+  const warning = document.createElement("p");
+  warning.textContent = `Nur Spielbefehle erlaubt während ${gameState.active}. Nutze '${gameState.active}-exit' zum Beenden.`;
+  output.appendChild(warning);
+  return;
+}
+
     
     switch (command) {   
       case "login":
@@ -152,8 +171,11 @@ function runLogout() {
       case "ttt-start":
       case "ttt-exit":
       case "ttt-help":
-        tttHandle(commandParts, output, woprActive);
-        break;  
+        tttHandle(commandParts, output, woprActive, (state) => {
+          gameState.active = state.active;
+          gameState.status = state.status;
+        });
+        break;
       default:
         newLine.textContent = `Unbekannter Befehl: ${commandRaw}`;
     }
