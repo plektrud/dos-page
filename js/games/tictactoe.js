@@ -20,6 +20,7 @@ function computerMove() {
 }
 
 function renderBoard(output) {
+  output.innerHTML = "";
   const layout = `
  ${tttBoard[0] || " "} | ${tttBoard[1] || " "} | ${tttBoard[2] || " "}
 ---+---+---
