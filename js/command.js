@@ -98,6 +98,7 @@ function getWelcomeMessage(username) {
         localStorage.removeItem("wopr");
         // CSS zurücksetzen
         output.classList.remove("wopr-mode");
+        commandInput.classList.remove("wopr-mode");
         if (promptSpan) {
           promptSpan.style.display = "";
         }
@@ -129,7 +130,7 @@ function getWelcomeMessage(username) {
         break;
       case "help":
         if (woprActive) {
-          newLine.innerHTML = "WOPR-Systembefehle:<br>ANALYZE     SIMULATE     DEFCON     LOGOUT";
+          newLine.innerHTML = "WOPR SYSTEM COMMANDS:<br>ANALYZE     DEFCON     GAMES     SIMULATE     LOGOUT";
         } else {
           newLine.innerHTML = "CD     DATE     HELP     LOGIN     LOGOUT     STATUS     TIME<br>weitere Zeilen";
         }
