@@ -12,11 +12,47 @@ function checkWin(player) {
 }
 
 function computerMove() {
-  const free = tttBoard.map((v, i) => v === null ? i : null).filter(i => i !== null);
-  if (free.length === 0) return;
-  const move = free[Math.floor(Math.random() * free.length)];
-  tttBoard[move] = "O";
+  const bestMove = minimax(tttBoard, "O").index;
+  if (bestMove !== undefined) {
+    tttBoard[bestMove] = "O";
+  }
 }
+
+function minimax(board, player) {
+  const availSpots = board.map((v, i) => v === null ? i : null).filter(i => i !== null);
+  if (checkWin("X")) return { score: -10 };
+  if (checkWin("O")) return { score: 10 };
+  if (availSpots.length === 0) return { score: 0 };
+  const moves = [];
+  for (let i of availSpots) {
+    const move = { index: i };
+    board[i] = player;
+    const result = minimax(board, player === "O" ? "X" : "O");
+    move.score = result.score;
+    board[i] = null; // Undo
+    moves.push(move);
+  }
+  let bestMove;
+  if (player === "O") {
+    let bestScore = -Infinity;
+    for (let move of moves) {
+      if (move.score > bestScore) {
+        bestScore = move.score;
+        bestMove = move;
+      }
+    }
+  } else {
+    let bestScore = Infinity;
+    for (let move of moves) {
+      if (move.score < bestScore) {
+        bestScore = move.score;
+        bestMove = move;
+      }
+    }
+  }
+  return bestMove;
+}
+
 
 function renderBoard(output) {
   output.innerHTML = "";
