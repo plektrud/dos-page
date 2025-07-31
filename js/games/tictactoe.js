@@ -38,7 +38,7 @@ export function tttHandle(commandParts, output, woprActive) {
   const response = document.createElement("p");
 
   if (!woprActive) {
-    response.textContent = "Spiel nur im WOPR-Modus verfügbar.";
+    response.textContent = "Unbekannter Befehl.";
     output.appendChild(response);
     return;
   }
@@ -47,7 +47,7 @@ export function tttHandle(commandParts, output, woprActive) {
     case "ttt-start":
       tttBoard = Array(9).fill(null);
       tttGameActive = true;
-      response.textContent = "Tic-Tac-Toe gestartet. Du spielst als X (0–8).";
+      response.textContent = "Tic-Tac-Toe started. You play as X (0–8).";
       break;
 
     case "ttt":
@@ -57,44 +57,44 @@ export function tttHandle(commandParts, output, woprActive) {
       }
       const pos = parseInt(arg);
       if (isNaN(pos) || pos < 0 || pos > 8 || tttBoard[pos]) {
-        response.textContent = "Ungültiger Zug. Wähle ein freies Feld von 0 bis 8.";
+        response.textContent = "Invalid move.";
         break;
       }
       tttBoard[pos] = "X";
       if (checkWin("X")) {
-        response.textContent = "Du hast gewonnen!";
+        response.textContent = "You won!";
         renderBoard(output);
         tttGameActive = false;
         break;
       }
       computerMove();
       if (checkWin("O")) {
-        response.textContent = "Der Computer hat gewonnen!";
+        response.textContent = "Joshua won!";
         renderBoard(output);
         tttGameActive = false;
         break;
       }
       if (tttBoard.every(cell => cell)) {
-        response.textContent = "Unentschieden!";
+        response.textContent = "Draw!";
         renderBoard(output);
         tttGameActive = false;
         break;
       }
-      response.textContent = "Zug ausgeführt.";
+      response.textContent = "Move executed.";
       break;
 
     case "ttt-exit":
       tttBoard = Array(9).fill(null);
       tttGameActive = false;
-      response.textContent = "Spiel beendet.";
+      response.textContent = "Game over!";
       break;
 
     case "ttt-help":
-      response.innerHTML = "Tic-Tac-Toe Befehle:<br>ttt-start – Neues Spiel<br>ttt [0-8] – Spielzug<br>ttt-exit – Spiel beenden<br>Nur im WOPR-Modus verfügbar.";
+      response.innerHTML = "Tic-Tac-Toe Commands:<br>ttt-start – New Game<br>ttt [0-8] – Move<br>ttt-exit – Quit Game";
       break;
 
     default:
-      response.textContent = `Unbekannter Tic-Tac-Toe-Befehl: ${commandParts.join(" ")}`;
+      response.textContent = `Unknown Command: ${commandParts.join(" ")}`;
   }
 
   output.appendChild(response);
