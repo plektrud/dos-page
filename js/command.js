@@ -9,7 +9,7 @@ const statusDisplay = document.getElementById("statusDisplay");
 let username = localStorage.getItem("username") || null;
 let status = localStorage.getItem("status") === "true";
 let woprActive = localStorage.getItem("wopr") === "true";
-let maxLines = woprActive ? 46 : 5;
+let maxLines = woprActive ? 45 : 5;
 
 if (woprActive) {
   output.classList.add("wopr-mode");
@@ -21,7 +21,7 @@ if (woprActive) {
   }
 
   // Zeilenanzahl aktualisieren
-  maxLines = 46;
+  maxLines = 45;
 }
 
 // HTML beim Laden aktualisieren
@@ -75,7 +75,7 @@ function getWelcomeMessage(username) {
           localStorage.setItem("wopr", "true");
     
           // Zeilen erhöhen
-          maxLines = 46;
+          maxLines = 45;
     
           // CSS anpassen (z. B. Hintergrundfarbe ändern)
           output.classList.add("wopr-mode");
