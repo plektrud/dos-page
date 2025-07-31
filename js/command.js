@@ -102,6 +102,7 @@ function getWelcomeMessage(username) {
           promptSpan.style.display = "";
         }
         maxLines = 5;
+        output.innerHTML = "";
         newLine.textContent = "Benutzer wurde abgemeldet.";
       break;
       
