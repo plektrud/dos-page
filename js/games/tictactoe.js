@@ -134,6 +134,7 @@ export function tttHandle(commandParts, output, woprActive, setGameState) {
 
     case "ttt-help":
       response.innerHTML = "Tic Tac Toe Commands:<br>ttt-start – New Game<br>ttt [0-8] – Move<br>ttt-exit – Quit Game";
+      output.appendChild(response);
       break;
 
     default:
