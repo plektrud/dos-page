@@ -1,7 +1,6 @@
 // games/tictactoe.js
 
 let tttBoard = Array(9).fill(null);
-let tttGameActive = false;
 
 function checkWin(player) {
   const combos = [
@@ -33,7 +32,9 @@ function renderBoard(output) {
   output.appendChild(line);
 }
 
-export function tttHandle(commandParts, output, woprActive) {
+let currentGameState = { active: null, status: "idle" };
+
+export function tttHandle(commandParts, output, woprActive, setGameState) {
   const command = commandParts[0].toLowerCase();
   const arg = commandParts[1];
   const response = document.createElement("p");
@@ -47,57 +48,64 @@ export function tttHandle(commandParts, output, woprActive) {
   switch (command) {
     case "ttt-start":
       tttBoard = Array(9).fill(null);
-      tttGameActive = true;
-      response.textContent = "Tic-Tac-Toe started. You play as X (0–8).";
+      currentGameState = { active: "ttt", status: "playing" };
+      setGameState(currentGameState);
+      response.textContent = "Tic-Tac-Toe gestartet.";
       break;
 
     case "ttt":
-      if (!tttGameActive) {
+      if (currentGameState.active !== "ttt" || currentGameState.status !== "playing") {
         response.textContent = "Spiel nicht gestartet. Nutze 'ttt-start'.";
         break;
       }
       const pos = parseInt(arg);
       if (isNaN(pos) || pos < 0 || pos > 8 || tttBoard[pos]) {
-        response.textContent = "Invalid move.";
+        response.textContent = "Ungültiger Zug.";
         break;
       }
       tttBoard[pos] = "X";
       if (checkWin("X")) {
-        response.textContent = "You won!";
+        response.textContent = "Du hast gewonnen!";
+        currentGameState = { active: null, status: "ended" };
+        setGameState(currentGameState);
         renderBoard(output);
-        tttGameActive = false;
         break;
       }
       computerMove();
       if (checkWin("O")) {
-        response.textContent = "Joshua won!";
+        response.textContent = "Joshua hat gewonnen!";
+        currentGameState = { active: null, status: "ended" };
+        setGameState(currentGameState);
         renderBoard(output);
-        tttGameActive = false;
         break;
       }
       if (tttBoard.every(cell => cell)) {
-        response.textContent = "Draw!";
+        response.textContent = "Unentschieden!";
+        currentGameState = { active: null, status: "ended" };
+        setGameState(currentGameState);
         renderBoard(output);
-        tttGameActive = false;
         break;
       }
-      response.textContent = "Move executed.";
+      response.textContent = "Zug ausgeführt.";
       break;
 
     case "ttt-exit":
       tttBoard = Array(9).fill(null);
-      tttGameActive = false;
-      response.textContent = "Game over!";
+      currentGameState = { active: null, status: "ended" };
+      setGameState(currentGameState);
+      response.textContent = "Spiel beendet.";
       break;
 
     case "ttt-help":
-      response.innerHTML = "Tic-Tac-Toe Commands:<br>ttt-start – New Game<br>ttt [0-8] – Move<br>ttt-exit – Quit Game";
+      response.innerHTML = "Tic-Tac-Toe Befehle:<br>ttt-start – Neues Spiel<br>ttt [0-8] – Spielzug<br>ttt-exit – Spiel beenden";
       break;
 
     default:
-      response.textContent = `Unknown Command: ${commandParts.join(" ")}`;
+      response.textContent = `Unbekannter Befehl: ${commandParts.join(" ")}`;
   }
 
   output.appendChild(response);
-  if (tttGameActive) renderBoard(output);
+  if (currentGameState.active === "ttt" && currentGameState.status === "playing") {
+    renderBoard(output);
+  }
 }
