@@ -1,6 +1,7 @@
 const input = document.getElementById("commandInput");
 const promptSpan = document.querySelector("#prompt span");
 const output = document.getElementById("output");
+const commandInput = document.getElementById("commandInput");
 const usernameDisplay = document.getElementById("usernameDisplay");
 const statusDisplay = document.getElementById("statusDisplay");
 
