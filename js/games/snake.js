@@ -6,28 +6,39 @@ let gameLoop = null;
 
 let currentGameState = { active: null, status: "idle" };
 
-function renderBoard(output) {
-  const emptyCell = "▒▒"; // Leeres Feld
-  const snakeCell = "  "; // Schlange
-  const appleCell = "(}"; // Apfel
-  // Spielfeld ohne Rahmen
+function renderBoard(output, gameOver = false) {
+  const emptyCell = "▒▒";
+  const snakeCell = "  ";
+  const appleCell = "(}";
+
   const grid = Array.from({ length: boardSize }, () =>
     Array.from({ length: boardSize }, () => emptyCell)
   );
+
   for (const segment of snake) {
     grid[segment.y][segment.x] = snakeCell;
   }
+
   grid[apple.y][apple.x] = appleCell;
-  // Rahmen erstellen mit doppelten Zeichen
+
   const horizontal = "─".repeat(boardSize * 2);
   const topBorder = "┌" + horizontal + "┐";
   const bottomBorder = "└" + horizontal + "┘";
   const middleRows = grid.map(row => "│" + row.join("") + "│");
   const layout = [topBorder, ...middleRows, bottomBorder].join("\n");
-  const line = document.createElement("p");
-  line.textContent = layout;
-  output.innerHTML = "";
-  output.appendChild(line);
+  const score = snake.length - 1;
+  const statusText = gameOver ? "Game Over!" : "Nutze Pfeiltasten!";
+  const scoreText = `Score: ${score}`;
+  output.innerHTML = ""; // Alles neu setzen
+  const board = document.createElement("pre");
+  board.textContent = layout;
+  const status = document.createElement("p");
+  status.textContent = statusText;
+  const scoreDisplay = document.createElement("p");
+  scoreDisplay.textContent = scoreText;
+  output.appendChild(board);
+  output.appendChild(status);
+  output.appendChild(scoreDisplay);
 }
 
 
@@ -85,7 +96,6 @@ export function snakeHandle(commandParts, output, woprActive, setGameState) {
       currentGameState = { active: "snake", status: "playing" };
       setGameState(currentGameState);
       renderBoard(output);
-      response.textContent = "Snake gestartet. Nutze Pfeiltasten!";
       output.appendChild(response);
 
       if (gameLoop) clearInterval(gameLoop);
@@ -96,10 +106,10 @@ export function snakeHandle(commandParts, output, woprActive, setGameState) {
           clearInterval(gameLoop);
           currentGameState = { active: null, status: "ended" };
           setGameState(currentGameState);
-          response.textContent = "Game Over!";
-          output.appendChild(response);
+          renderBoard(output, true); // Game Over anzeigen
+          return;
         }
-        renderBoard(output);
+        renderBoard(output); // Normaler Frame
       }, 400);
       break;
 
