@@ -27,9 +27,9 @@ function renderBoard(output, gameOver = false) {
   const middleRows = grid.map(row => "│" + row.join("") + "│");
   const layout = [topBorder, ...middleRows, bottomBorder].join("\n");
   const score = snake.length - 1;
-  const statusText = gameOver ? "Game Over!" : "Nutze Pfeiltasten!";
   const scoreText = `Score: ${score}`;
-  output.innerHTML = ""; // Alles neu setzen
+  const statusText = gameOver ? "Game Over!" : "";
+    output.innerHTML = ""; // Alles neu setzen
   const board = document.createElement("pre");
   board.textContent = layout;
   const status = document.createElement("p");
@@ -37,9 +37,9 @@ function renderBoard(output, gameOver = false) {
   const scoreDisplay = document.createElement("p");
   scoreDisplay.textContent = scoreText;
   output.appendChild(board);
-  output.appendChild(status);
   output.appendChild(scoreDisplay);
-}
+  output.appendChild(status);
+  }
 
 
 function moveSnake() {
