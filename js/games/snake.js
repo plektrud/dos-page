@@ -7,9 +7,9 @@ let gameLoop = null;
 let currentGameState = { active: null, status: "idle" };
 
 function renderBoard(output) {
-  const emptyCell = "░"; // Leeres Feld
-  const snakeCell = "■"; // Schlange
-  const appleCell = "δ"; // Apfel
+  const emptyCell = "▒▒"; // Leeres Feld
+  const snakeCell = "██"; // Schlange
+  const appleCell = "(}"; // Apfel
   // Spielfeld ohne Rahmen
   const grid = Array.from({ length: boardSize }, () =>
     Array.from({ length: boardSize }, () => emptyCell)
@@ -18,16 +18,18 @@ function renderBoard(output) {
     grid[segment.y][segment.x] = snakeCell;
   }
   grid[apple.y][apple.x] = appleCell;
-  // Rahmen erstellen
-  const topBorder = "┌" + "─".repeat(boardSize) + "┐";
-  const bottomBorder = "└" + "─".repeat(boardSize) + "┘";
+  // Rahmen erstellen mit doppelten Zeichen
+  const horizontal = "─".repeat(boardSize * 2);
+  const topBorder = "┌" + horizontal + "┐";
+  const bottomBorder = "└" + horizontal + "┘";
   const middleRows = grid.map(row => "│" + row.join("") + "│");
   const layout = [topBorder, ...middleRows, bottomBorder].join("\n");
   const line = document.createElement("p");
-  line.innerHTML = `<pre>${layout}</pre>`;
+  line.textContent = layout;
   output.innerHTML = "";
   output.appendChild(line);
 }
+
 
 function moveSnake() {
   const head = { ...snake[0] };
