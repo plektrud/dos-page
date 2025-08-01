@@ -1,5 +1,6 @@
 import { tttHandle } from "./games/tictactoe.js";
 import { snakeHandle } from "./games/snake.js";
+import { mazeHandle } from "./games/maze.js";
 
 const input = document.getElementById("commandInput");
 const promptSpan = document.querySelector("#prompt span");
@@ -91,7 +92,7 @@ const woprCommands = ["analyze", "defcon", "exit", "games", "simulate", "logout"
 const allowedGameCommands = {
   ttt: ["ttt", "ttt-start", "ttt-exit", "ttt-help"],
   snake: ["snake", "snake-start", "snake-exit", "snake-help"],
-  quiz: ["quiz", "quiz-start", "quiz-exit", "quiz-help"]
+  maze: ["maze", "maze-start", "maze-exit", "maze-help"]
 };
     
 function getAllowedCommands() {
@@ -198,6 +199,15 @@ function getAllowedCommands() {
           gameState.status = state.status;
         });
         break;
+      case "maze":
+      case "maze-start":
+      case "maze-exit":
+      case "maze-help":
+        mazeHandle(commandParts, output, woprActive, (state) => {
+          gameState.active = state.active;
+          gameState.status = state.status;
+        });
+        break;  
   
       default:
         newLine.textContent = `Unbekannter Befehl: ${commandRaw}`;
