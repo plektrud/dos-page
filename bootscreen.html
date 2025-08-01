@@ -49,10 +49,10 @@ let baseInterval = setInterval(() => {
 }
 
 const extraLines = [
-  ["Video adapter:", " no CGA detected. Starting compatibility mode."],
+  ["Video adapter:", " no CGA detected",". Use compatibility mode."],
   ["Keyboard:", " OK"],
   ["Mouse:", " OK"],
-  ["Network:", " no modem detected. Using unknown device."],
+  ["Network:", " no modem detected",". Use unknown device."],
   ["FDD controller:", " unable to locate disk drives."],
   ["Error: no bootable disk found."],
   [" "],
@@ -74,7 +74,7 @@ function showExtraLines() {
     function showFragments(fragments, fragIdx = 0) {
         if (fragIdx < fragments.length) {
             bootscreenText.textContent += fragments[fragIdx];
-            setTimeout(() => showFragments(fragments, fragIdx + 1), 250 + Math.random() * 750);
+            setTimeout(() => showFragments(fragments, fragIdx + 1), 300 + Math.random() * 700);
         } else {
             bootscreenText.textContent += "\n";
             lineIdx++;
