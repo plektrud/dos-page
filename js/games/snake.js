@@ -8,7 +8,7 @@ let currentGameState = { active: null, status: "idle" };
 
 function renderBoard(output) {
   const emptyCell = "▒▒"; // Leeres Feld
-  const snakeCell = "██"; // Schlange
+  const snakeCell = "  "; // Schlange
   const appleCell = "(}"; // Apfel
   // Spielfeld ohne Rahmen
   const grid = Array.from({ length: boardSize }, () =>
