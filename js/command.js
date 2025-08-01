@@ -61,7 +61,7 @@ input.addEventListener("keydown", function(event) {
     const newLine = document.createElement("p");
 
 function getWelcomeMessage(username) {
-  if (username.toUpperCase() === "FALKEN") {
+  if (username.toUpperCase() === "JOSHUA") {
     return "Greetings Professor Falken. <br>Shall we play a game?";
   } else {
     return `Hallo ${username}, Sie sind jetzt eingeloggt.`;
