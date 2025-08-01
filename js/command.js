@@ -13,6 +13,12 @@ const gameState = {
   status: "idle", // "idle", "playing", "paused", "ended"
 };
 
+const availableGames = [
+  { name: "Falken's Maze", command: "maze" },
+  { name: "Tic Tac Toe", command: "ttt" },
+  { name: "Snake", command: "snake" }
+];
+
 // Initiale Variablen
 let username = localStorage.getItem("username") || null;
 let status = localStorage.getItem("status") === "true";
@@ -158,6 +164,16 @@ function getAllowedCommands() {
           link.click(); // Simuliert Klick auf den Link
         } else {
           newLine.textContent = "Terminal kann nicht aufgerufen werden.";
+        }
+        break;
+      case "games":
+        if (woprActive) {
+          const gameList = availableGames
+            .map(game => `- ${game.name} (${game.command})`)
+            .join("<br>");
+          newLine.innerHTML = `${gameList}`;
+        } else {
+          newLine.textContent = "Befehl 'games' ist nur im WOPR-Modus verfügbar.";
         }
         break;
       case "help":
