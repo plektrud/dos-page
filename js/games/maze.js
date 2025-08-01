@@ -4,6 +4,14 @@ let mazeTimer = null;
 let timeLeft = 30;
 let currentGameState = { active: null, status: "idle" };
 
+const mazeLayout = [
+  "###############",
+  "#@     #     E#",
+  "# ### ### ### #",
+  "#   #     #   #",
+  "###############"
+];
+
 function renderMaze(output, gameOver = false, win = false) {
   const display = maze.map((row, y) =>
     row.map((cell, x) => (player.x === x && player.y === y ? "@" : cell)).join("")
