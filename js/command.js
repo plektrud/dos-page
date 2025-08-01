@@ -69,7 +69,7 @@ input.addEventListener("keydown", function(event) {
 
 function getWelcomeMessage(username) {
   if (username.toUpperCase() === "JOSHUA") {
-    return "Greetings Professor Falken. <br>Shall we play a game?";
+    return "Greetings Professor . <br>Shall we play a game?";
   } else {
     return `Hallo ${username}, Sie sind jetzt eingeloggt.`;
   }
@@ -121,8 +121,8 @@ function getAllowedCommands() {
         localStorage.setItem("username", username);
         localStorage.setItem("status", "true");
     
-        // WOPR aktivieren, wenn Benutzer "FALKEN"
-        if (username.toUpperCase() === "FALKEN") {
+        // WOPR aktivieren, wenn Benutzer "Joshua"
+        if (username.toUpperCase() === "JOSHUA") {
           woprActive = true;
           localStorage.setItem("wopr", "true");
     
