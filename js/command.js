@@ -87,7 +87,7 @@ function runLogout() {
 }    
 
 const systemCommands = ["login", "logout", "cd", "clear", "date", "exit", "help", "status", "time"];
-const woprCommands = ["analyze", "defcon", "games", "simulate", "ttt-start"];
+const woprCommands = ["analyze", "defcon", "exit", "games", "simulate", "logout" ];
 const allowedGameCommands = {
   ttt: ["ttt", "ttt-start", "ttt-exit", "ttt-help"],
   snake: ["snake", "snake-start", "snake-exit", "snake-help"],
@@ -160,13 +160,16 @@ function getAllowedCommands() {
         }
         break;
       case "help":
-        newLine.innerHTML = `<strong>System Commands:</strong><br>${systemCommands.join("   ")}`;
-        if (woprActive) {
-          newLine.innerHTML += `<br><strong>WOPR Commands:</strong><br>${woprCommands.join("   ")}`;
-        }
-        if (gameState.active && allowedGameCommands[gameState.active]) {
-          newLine.innerHTML += `<br><strong>Game Commands (${gameState.active}):</strong><br>${allowedGameCommands[gameState.active].join("   ")}`;
-        }
+        if (woprActive && gameState.active && allowedGameCommands[gameState.active]) {
+          
+          newLine.innerHTML += `<br>Game Commands (${gameState.active}):<br>${allowedGameCommands[gameState.active].join("   ")}`;
+        } else {
+            if (woprActive) {
+              newLine.innerHTML += `<br>WOPR Commands:<br>${woprCommands.join("   ")}`;
+            } else {
+               newLine.innerHTML = `System Befehle:<br>${systemCommands.join("   ")}`;
+            }
+          }
         output.appendChild(newLine);
         break;
       case "status":
