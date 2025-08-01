@@ -49,36 +49,56 @@ let baseInterval = setInterval(() => {
 }
 
 const extraLines = [
- "Video Adapter: compatibility mode",
-  "Keyboard: OK",
-  "Mouse: OK",
-  "Network: unkown device",
-  "FDD Controller: unable to locate disk drives",
-  "  Error: no bootable disk found",
-  " ",
-  " ",
-  "*** Fallback: loading from network ***",
-  "Checking for network connection...",
-  "Dialing... 00¬ù¥8è¢4┘Θ",
-  "Connecting to remote host archive.thiwa.de",
-  " ",
-  "Connected!",
-  " "
-]; 
+  ["Video adapter:", " no CGA detected. Starting compatibility mode."],
+  ["Keyboard:", " OK"],
+  ["Mouse:", " OK"],
+  ["Network:", " no modem detected. Using unknown device."],
+  ["FDD controller:", " unable to locate disk drives."],
+  ["Error:", " no bootable disk found."],
+  [" "],
+  ["*** Fallback:", " loading from network ***"],
+  ["Initializing modem",".",".","."],
+  ["Dialing:", " 001","-4","0","8","-3","9","9","-2","3","6","4"],
+  ["Handshake in progress",".",".","."],
+  ["Baud rate negotiated:", " 1200"],
+  ["Protocol:", " ANSI/VT100"],
+  ["Connection established."],
+  ["Remote system responding",".",".","."],
+  ["Connection established."],
+  [" "],
+  ["*** WELCOME TO W.O.P.R. ***"]
+];
  
 function showExtraLines() {
     let lineIdx = 0;
+
+    function showFragments(fragments, fragIdx = 0) {
+        if (fragIdx < fragments.length) {
+            bootscreenText.textContent += fragments[fragIdx];
+            setTimeout(() => showFragments(fragments, fragIdx + 1), 250 + Math.random() * 750);
+        } else {
+            bootscreenText.textContent += "\n";
+            lineIdx++;
+            setTimeout(nextLine, 500);
+        }
+    }
     function nextLine() {
         if (lineIdx < extraLines.length) {
-            bootscreenText.textContent += extraLines[lineIdx] + "\n";
-            lineIdx++;
-            setTimeout(nextLine, 700);
+            const line = extraLines[lineIdx];
+            if (Array.isArray(line)) {
+                showFragments(line);
+            } else {
+                bootscreenText.textContent += line + "\n";
+                lineIdx++;
+                setTimeout(nextLine, 700);
+            }
         } else {
-            showPromptAndBlinkCursor(); // Eingabe starten
+            showPromptAndBlinkCursor();
         }
     }
     nextLine();
 }
+
   
  function showPromptAndBlinkCursor() {
     const promptLine = document.getElementById('prompt-line');
@@ -102,7 +122,7 @@ function showExtraLines() {
 function startLoadingBar() {
     // Zeige den OS-Info-Text an
   osInfo.style.display = "block";
-  osInfo.textContent = "OS booting";
+  osInfo.textContent = "yviDOS booting";
 let count = 0;
 const max = 20;
 const interval = setInterval(() => {
